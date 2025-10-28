@@ -1,0 +1,9 @@
+If transaction_amount between 266 and 3356, risk_score is medium and approval_status is pending.
+If customer_type is bronze and order_amount > 8792, discount is 12% and priority is low.
+If region in (central, east) and total_value > 3208, tax_rate is 21%.
+If customer_type is gold and order_amount > 8684, discount is 30% and priority is high.
+If product_category is food and quantity >= 39, shipping_cost is 50 and delivery_time is 8.
+If customer_segment is new and purchase_frequency > 8, loyalty_points is 2293 and tier is standard.
+If product_category is food and quantity >= 55, shipping_cost is 29 and delivery_time is 23.
+If customer_type is gold and order_amount > 4945, discount is 28% and priority is medium.
+Otherwise, status is default and action is none.

@@ -1,0 +1,7 @@
+If transaction_amount between 497 and 8200, risk_score is high and approval_status is rejected.
+If payment_method is debit_card and transaction_type is bronze, processing_fee is 2% and settlement_time is 19.
+If product_category is furniture and quantity >= 17, shipping_cost is 29 and delivery_time is 5.
+If payment_method is paypal and transaction_type is silver, processing_fee is 2% and settlement_time is 4.
+If inventory_level < 51 and demand_forecast is high, reorder_quantity is 60 and priority is medium.
+If product_category is furniture and quantity >= 37, shipping_cost is 21 and delivery_time is 25.
+Otherwise, status is default and action is none.

@@ -1,0 +1,15 @@
+If customer_type is standard and order_amount > 237, discount is 7% and priority is high.
+If payment_method is credit_card and transaction_type is standard, processing_fee is 4% and settlement_time is 26.
+If region in (central, west) and total_value > 1602, tax_rate is 25%.
+If transaction_amount between 605 and 9101, risk_score is medium and approval_status is rejected.
+If customer_segment is regular and purchase_frequency > 29, loyalty_points is 8715 and tier is premium.
+If user_age >= 39 and membership_level is standard, access_level is standard and trial_period is 35.
+If product_category is furniture and quantity >= 2, shipping_cost is 44 and delivery_time is 30.
+If customer_segment is regular and purchase_frequency > 48, loyalty_points is 2017 and tier is premium.
+If inventory_level < 44 and demand_forecast is medium, reorder_quantity is 11 and priority is low.
+If payment_method is paypal and transaction_type is gold, processing_fee is 5% and settlement_time is 22.
+If customer_segment is vip and purchase_frequency > 49, loyalty_points is 3918 and tier is basic.
+If customer_type is premium and order_amount > 2879, discount is 33% and priority is low.
+If region in (north, west) and total_value > 755, tax_rate is 24%.
+If customer_type is bronze and order_amount > 4201, discount is 15% and priority is low.
+Otherwise, status is default and action is none.

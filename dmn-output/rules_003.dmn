@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_rules_003"
+             name="rules 003"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="rules_003" name="rules 003">
+    <decisionTable id="decisionTable_rules_003" hitPolicy="FIRST">
+      <input id="input_purchase_frequency" label="purchase_frequency">
+        <inputExpression id="inputExpression_purchase_frequency" typeRef="string">
+          <text>purchase_frequency</text>
+        </inputExpression>
+      </input>
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_quantity" label="quantity">
+        <inputExpression id="inputExpression_quantity" typeRef="string">
+          <text>quantity</text>
+        </inputExpression>
+      </input>
+      <input id="input_membership_level" label="membership_level">
+        <inputExpression id="inputExpression_membership_level" typeRef="string">
+          <text>membership_level</text>
+        </inputExpression>
+      </input>
+      <input id="input_user_age" label="user_age">
+        <inputExpression id="inputExpression_user_age" typeRef="string">
+          <text>user_age</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_type" label="transaction_type">
+        <inputExpression id="inputExpression_transaction_type" typeRef="string">
+          <text>transaction_type</text>
+        </inputExpression>
+      </input>
+      <input id="input_customer_segment" label="customer_segment">
+        <inputExpression id="inputExpression_customer_segment" typeRef="string">
+          <text>customer_segment</text>
+        </inputExpression>
+      </input>
+      <input id="input_product_category" label="product_category">
+        <inputExpression id="inputExpression_product_category" typeRef="string">
+          <text>product_category</text>
+        </inputExpression>
+      </input>
+      <input id="input_payment_method" label="payment_method">
+        <inputExpression id="inputExpression_payment_method" typeRef="string">
+          <text>payment_method</text>
+        </inputExpression>
+      </input>
+      <output id="output_access_level" label="access_level" name="access_level" typeRef="string" />
+      <output id="output_loyalty_points" label="loyalty_points" name="loyalty_points" typeRef="string" />
+      <output id="output_tier" label="tier" name="tier" typeRef="string" />
+      <output id="output_shipping_cost" label="shipping_cost" name="shipping_cost" typeRef="string" />
+      <output id="output_processing_fee" label="processing_fee" name="processing_fee" typeRef="string" />
+      <output id="output_action" label="action" name="action" typeRef="string" />
+      <output id="output_delivery_time" label="delivery_time" name="delivery_time" typeRef="string" />
+      <output id="output_trial_period" label="trial_period" name="trial_period" typeRef="string" />
+      <output id="output_settlement_time" label="settlement_time" name="settlement_time" typeRef="string" />
+      <output id="output_status" label="status" name="status" typeRef="string" />
+      <rule id="rule_b81a206d">
+        <inputEntry id="inputEntry_rule_b81a206d_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_quantity">
+          <text>&gt;= 4</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_product_category">
+          <text>&quot;clothing&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b81a206d_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_shipping_cost">
+          <text>40</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_delivery_time">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b81a206d_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_7ef68523">
+        <inputEntry id="inputEntry_rule_7ef68523_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_membership_level">
+          <text>&quot;standard&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_user_age">
+          <text>&gt;= 59</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7ef68523_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_access_level">
+          <text>&quot;standard&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_trial_period">
+          <text>27</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7ef68523_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_0377ff56">
+        <inputEntry id="inputEntry_rule_0377ff56_purchase_frequency">
+          <text>&gt; 32</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_customer_segment">
+          <text>&quot;vip&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0377ff56_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_loyalty_points">
+          <text>3567</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_tier">
+          <text>&quot;enterprise&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0377ff56_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_5a7de7ec">
+        <inputEntry id="inputEntry_rule_5a7de7ec_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_transaction_type">
+          <text>&quot;premium&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_5a7de7ec_payment_method">
+          <text>&quot;debit_card&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_processing_fee">
+          <text>&quot;5%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_settlement_time">
+          <text>27</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_5a7de7ec_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_9da0f64c">
+        <inputEntry id="inputEntry_rule_9da0f64c_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_transaction_type">
+          <text>&quot;gold&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_9da0f64c_payment_method">
+          <text>&quot;debit_card&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_processing_fee">
+          <text>&quot;1%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_settlement_time">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_9da0f64c_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_2a212af1">
+        <inputEntry id="inputEntry_rule_2a212af1_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_transaction_type">
+          <text>&quot;standard&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2a212af1_payment_method">
+          <text>&quot;debit_card&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_processing_fee">
+          <text>&quot;3%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_settlement_time">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2a212af1_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_499d2f6b">
+        <inputEntry id="inputEntry_rule_499d2f6b_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_membership_level">
+          <text>&quot;basic&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_user_age">
+          <text>&gt;= 23</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_499d2f6b_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_access_level">
+          <text>&quot;basic&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_trial_period">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_499d2f6b_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_14a6fab0">
+        <inputEntry id="inputEntry_rule_14a6fab0_purchase_frequency">
+          <text>&gt; 27</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_customer_segment">
+          <text>&quot;new&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_14a6fab0_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_loyalty_points">
+          <text>862</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_tier">
+          <text>&quot;standard&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_14a6fab0_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_006b0697">
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_006b0697_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_action">
+          <text>&quot;none&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_006b0697_status">
+          <text>&quot;default&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

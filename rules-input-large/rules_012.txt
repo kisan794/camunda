@@ -1,0 +1,16 @@
+If transaction_amount between 513 and 9909, risk_score is low and approval_status is review.
+If region in (south, north) and total_value > 621, tax_rate is 17%.
+If customer_type is bronze and order_amount > 9516, discount is 40% and priority is medium.
+If customer_type is bronze and order_amount > 1646, discount is 7% and priority is high.
+If customer_type is bronze and order_amount > 6028, discount is 7% and priority is high.
+If customer_type is bronze and order_amount > 1921, discount is 34% and priority is medium.
+If transaction_amount between 714 and 7162, risk_score is low and approval_status is review.
+If customer_type is standard and order_amount > 5078, discount is 23% and priority is low.
+If product_category is furniture and quantity >= 16, shipping_cost is 7 and delivery_time is 15.
+If transaction_amount between 418 and 8913, risk_score is low and approval_status is review.
+If user_age >= 56 and membership_level is standard, access_level is standard and trial_period is 39.
+If product_category is books and quantity >= 96, shipping_cost is 34 and delivery_time is 14.
+If product_category is clothing and quantity >= 49, shipping_cost is 25 and delivery_time is 8.
+If product_category is furniture and quantity >= 57, shipping_cost is 15 and delivery_time is 6.
+If product_category is electronics and quantity >= 52, shipping_cost is 25 and delivery_time is 21.
+Otherwise, status is default and action is none.

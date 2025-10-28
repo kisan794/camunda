@@ -1,0 +1,20 @@
+If product_category is food and quantity >= 10, shipping_cost is 14 and delivery_time is 19.
+If inventory_level < 75 and demand_forecast is high, reorder_quantity is 75 and priority is high.
+If product_category is food and quantity >= 44, shipping_cost is 41 and delivery_time is 13.
+If user_age >= 47 and membership_level is standard, access_level is basic and trial_period is 42.
+If region in (south, east) and total_value > 511, tax_rate is 12%.
+If inventory_level < 11 and demand_forecast is medium, reorder_quantity is 6 and priority is low.
+If customer_segment is vip and purchase_frequency > 11, loyalty_points is 6429 and tier is enterprise.
+If product_category is food and quantity >= 49, shipping_cost is 50 and delivery_time is 18.
+If customer_type is standard and order_amount > 4502, discount is 50% and priority is high.
+If transaction_amount between 997 and 6898, risk_score is high and approval_status is approved.
+If transaction_amount between 732 and 4722, risk_score is high and approval_status is approved.
+If transaction_amount between 129 and 2181, risk_score is high and approval_status is rejected.
+If customer_type is standard and order_amount > 8333, discount is 6% and priority is low.
+If user_age >= 24 and membership_level is premium, access_level is premium and trial_period is 40.
+If customer_type is gold and order_amount > 2868, discount is 27% and priority is low.
+If customer_segment is vip and purchase_frequency > 20, loyalty_points is 1056 and tier is enterprise.
+If transaction_amount between 759 and 2154, risk_score is low and approval_status is approved.
+If customer_type is premium and order_amount > 6747, discount is 25% and priority is medium.
+If transaction_amount between 227 and 3316, risk_score is high and approval_status is rejected.
+Otherwise, status is default and action is none.

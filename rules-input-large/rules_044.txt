@@ -1,0 +1,7 @@
+If payment_method is debit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 3.
+If inventory_level < 56 and demand_forecast is high, reorder_quantity is 93 and priority is low.
+If transaction_amount between 918 and 9168, risk_score is high and approval_status is approved.
+If region in (west, east) and total_value > 3959, tax_rate is 9%.
+If transaction_amount between 497 and 5388, risk_score is low and approval_status is rejected.
+If region in (south, south) and total_value > 2422, tax_rate is 13%.
+Otherwise, status is default and action is none.

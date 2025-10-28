@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_rules_089"
+             name="rules 089"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="rules_089" name="rules 089">
+    <decisionTable id="decisionTable_rules_089" hitPolicy="FIRST">
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_quantity" label="quantity">
+        <inputExpression id="inputExpression_quantity" typeRef="string">
+          <text>quantity</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_amount" label="transaction_amount">
+        <inputExpression id="inputExpression_transaction_amount" typeRef="string">
+          <text>transaction_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_type" label="transaction_type">
+        <inputExpression id="inputExpression_transaction_type" typeRef="string">
+          <text>transaction_type</text>
+        </inputExpression>
+      </input>
+      <input id="input_product_category" label="product_category">
+        <inputExpression id="inputExpression_product_category" typeRef="string">
+          <text>product_category</text>
+        </inputExpression>
+      </input>
+      <input id="input_payment_method" label="payment_method">
+        <inputExpression id="inputExpression_payment_method" typeRef="string">
+          <text>payment_method</text>
+        </inputExpression>
+      </input>
+      <output id="output_risk_score" label="risk_score" name="risk_score" typeRef="string" />
+      <output id="output_shipping_cost" label="shipping_cost" name="shipping_cost" typeRef="string" />
+      <output id="output_approval_status" label="approval_status" name="approval_status" typeRef="string" />
+      <output id="output_processing_fee" label="processing_fee" name="processing_fee" typeRef="string" />
+      <output id="output_action" label="action" name="action" typeRef="string" />
+      <output id="output_delivery_time" label="delivery_time" name="delivery_time" typeRef="string" />
+      <output id="output_settlement_time" label="settlement_time" name="settlement_time" typeRef="string" />
+      <output id="output_status" label="status" name="status" typeRef="string" />
+      <rule id="rule_e48436e1">
+        <inputEntry id="inputEntry_rule_e48436e1_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_e48436e1_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_e48436e1_transaction_amount">
+          <text>[512..7753]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_e48436e1_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_e48436e1_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_e48436e1_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_risk_score">
+          <text>&quot;medium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_approval_status">
+          <text>&quot;pending&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_e48436e1_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_18d8d46c">
+        <inputEntry id="inputEntry_rule_18d8d46c_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18d8d46c_quantity">
+          <text>&gt;= 91</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18d8d46c_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18d8d46c_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18d8d46c_product_category">
+          <text>&quot;furniture&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18d8d46c_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_shipping_cost">
+          <text>32</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_delivery_time">
+          <text>30</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18d8d46c_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_20842acb">
+        <inputEntry id="inputEntry_rule_20842acb_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_20842acb_quantity">
+          <text>&gt;= 34</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_20842acb_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_20842acb_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_20842acb_product_category">
+          <text>&quot;food&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_20842acb_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_shipping_cost">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_delivery_time">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_20842acb_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_18f2414f">
+        <inputEntry id="inputEntry_rule_18f2414f_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18f2414f_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18f2414f_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18f2414f_transaction_type">
+          <text>&quot;gold&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18f2414f_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_18f2414f_payment_method">
+          <text>&quot;credit_card&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_processing_fee">
+          <text>&quot;1%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_settlement_time">
+          <text>17</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_18f2414f_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_7449513b">
+        <inputEntry id="inputEntry_rule_7449513b_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7449513b_quantity">
+          <text>&gt;= 69</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7449513b_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7449513b_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7449513b_product_category">
+          <text>&quot;clothing&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7449513b_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_shipping_cost">
+          <text>19</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_delivery_time">
+          <text>18</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7449513b_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_0d8e81cb">
+        <inputEntry id="inputEntry_rule_0d8e81cb_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0d8e81cb_quantity">
+          <text>&gt;= 9</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0d8e81cb_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0d8e81cb_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0d8e81cb_product_category">
+          <text>&quot;clothing&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0d8e81cb_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_shipping_cost">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_delivery_time">
+          <text>17</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0d8e81cb_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_13e04c5d">
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_transaction_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_product_category">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13e04c5d_payment_method">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_processing_fee">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_action">
+          <text>&quot;none&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_settlement_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13e04c5d_status">
+          <text>&quot;default&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

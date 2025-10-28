@@ -1,0 +1,11 @@
+If inventory_level < 88 and demand_forecast is low, reorder_quantity is 58 and priority is high.
+If payment_method is paypal and transaction_type is premium, processing_fee is 5% and settlement_time is 29.
+If transaction_amount between 917 and 5809, risk_score is high and approval_status is rejected.
+If region in (central, west) and total_value > 3993, tax_rate is 9%.
+If product_category is food and quantity >= 42, shipping_cost is 48 and delivery_time is 30.
+If customer_type is premium and order_amount > 8513, discount is 43% and priority is high.
+If inventory_level < 47 and demand_forecast is medium, reorder_quantity is 33 and priority is low.
+If user_age >= 39 and membership_level is standard, access_level is basic and trial_period is 30.
+If customer_type is standard and order_amount > 9172, discount is 17% and priority is low.
+If user_age >= 41 and membership_level is enterprise, access_level is premium and trial_period is 20.
+Otherwise, status is default and action is none.

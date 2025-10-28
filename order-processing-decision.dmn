@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_order_processing_decision"
+             name="OrderProcessingDecision"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="order_processing_decision" name="OrderProcessingDecision">
+    <decisionTable id="decisionTable_order_processing_decision" hitPolicy="FIRST">
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_total_amount" label="total_amount">
+        <inputExpression id="inputExpression_total_amount" typeRef="string">
+          <text>total_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_customer_membership" label="customer_membership">
+        <inputExpression id="inputExpression_customer_membership" typeRef="string">
+          <text>customer_membership</text>
+        </inputExpression>
+      </input>
+      <input id="input_any_item_price" label="any_item_price">
+        <inputExpression id="inputExpression_any_item_price" typeRef="string">
+          <text>any_item_price</text>
+        </inputExpression>
+      </input>
+      <input id="input_total_quantity" label="total_quantity">
+        <inputExpression id="inputExpression_total_quantity" typeRef="string">
+          <text>total_quantity</text>
+        </inputExpression>
+      </input>
+      <input id="input_customer" label="customer">
+        <inputExpression id="inputExpression_customer" typeRef="string">
+          <text>customer</text>
+        </inputExpression>
+      </input>
+      <input id="input_the_order" label="the_order">
+        <inputExpression id="inputExpression_the_order" typeRef="string">
+          <text>the_order</text>
+        </inputExpression>
+      </input>
+      <output id="output_priority_shipping" label="priority_shipping" name="priority_shipping" typeRef="string" />
+      <output id="output_discount" label="discount" name="discount" typeRef="string" />
+      <output id="output_risklevel" label="risklevel" name="risklevel" typeRef="string" />
+      <rule id="rule_a5418b5e">
+        <inputEntry id="inputEntry_rule_a5418b5e_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_total_amount">
+          <text>&gt; 3000</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_customer_membership">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_any_item_price">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_total_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_customer">
+          <text>&quot;platinum&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a5418b5e_the_order">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_a5418b5e_priority_shipping">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a5418b5e_discount">
+          <text>&quot;25%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a5418b5e_risklevel">
+          <text>&quot;Low&quot;</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_fb9b15f7">
+        <inputEntry id="inputEntry_rule_fb9b15f7_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_total_amount">
+          <text>[1000..3000]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_customer_membership">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_any_item_price">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_total_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_customer">
+          <text>&quot;gold&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_fb9b15f7_the_order">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_fb9b15f7_priority_shipping">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_fb9b15f7_discount">
+          <text>&quot;15%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_fb9b15f7_risklevel">
+          <text>&quot;Medium&quot;</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_649ff056">
+        <inputEntry id="inputEntry_rule_649ff056_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_total_amount">
+          <text>&gt; 1500</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_customer_membership">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_any_item_price">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_total_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_customer">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_649ff056_the_order">
+          <text>contains(., &quot;electronics&quot;)</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_649ff056_priority_shipping">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_649ff056_discount">
+          <text>&quot;10%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_649ff056_risklevel">
+          <text>&quot;High&quot;</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_59e42671">
+        <inputEntry id="inputEntry_rule_59e42671_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_total_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_customer_membership">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_any_item_price">
+          <text>&gt; 2000</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_total_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_customer">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_59e42671_the_order">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_59e42671_priority_shipping">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_59e42671_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_59e42671_risklevel">
+          <text>&quot;Critical&quot;</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_a8a86ec2">
+        <inputEntry id="inputEntry_rule_a8a86ec2_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_total_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_customer_membership">
+          <text>[&quot;silver&quot;, &quot;bronze&quot;]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_any_item_price">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_total_quantity">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_customer">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a8a86ec2_the_order">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_a8a86ec2_priority_shipping">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a8a86ec2_discount">
+          <text>&quot;5%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a8a86ec2_risklevel">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_981eff71">
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_total_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_customer_membership">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_any_item_price">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_total_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_customer">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_981eff71_the_order">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_981eff71_priority_shipping">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_981eff71_discount">
+          <text>&quot;0%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_981eff71_risklevel">
+          <text>&quot;Low&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,7 @@
+If transaction_amount between 158 and 3796, risk_score is high and approval_status is review.
+If region in (central, central) and total_value > 2684, tax_rate is 21%.
+If region in (north, west) and total_value > 4403, tax_rate is 5%.
+If transaction_amount between 408 and 4946, risk_score is medium and approval_status is rejected.
+If product_category is books and quantity >= 88, shipping_cost is 38 and delivery_time is 16.
+If product_category is clothing and quantity >= 69, shipping_cost is 21 and delivery_time is 27.
+Otherwise, status is default and action is none.

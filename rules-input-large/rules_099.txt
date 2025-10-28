@@ -1,0 +1,20 @@
+If product_category is food and quantity >= 45, shipping_cost is 15 and delivery_time is 13.
+If customer_type is standard and order_amount > 2367, discount is 31% and priority is medium.
+If customer_type is standard and order_amount > 9631, discount is 11% and priority is low.
+If customer_type is silver and order_amount > 1308, discount is 26% and priority is high.
+If user_age >= 30 and membership_level is basic, access_level is enterprise and trial_period is 26.
+If transaction_amount between 276 and 6970, risk_score is high and approval_status is review.
+If inventory_level < 42 and demand_forecast is high, reorder_quantity is 86 and priority is medium.
+If user_age >= 43 and membership_level is basic, access_level is basic and trial_period is 58.
+If customer_segment is regular and purchase_frequency > 35, loyalty_points is 3303 and tier is premium.
+If transaction_amount between 417 and 6209, risk_score is medium and approval_status is review.
+If transaction_amount between 959 and 7652, risk_score is low and approval_status is rejected.
+If inventory_level < 81 and demand_forecast is medium, reorder_quantity is 7 and priority is medium.
+If customer_type is standard and order_amount > 2208, discount is 6% and priority is high.
+If customer_type is standard and order_amount > 9561, discount is 33% and priority is low.
+If region in (south, north) and total_value > 1220, tax_rate is 14%.
+If inventory_level < 21 and demand_forecast is medium, reorder_quantity is 87 and priority is medium.
+If customer_segment is regular and purchase_frequency > 33, loyalty_points is 5352 and tier is premium.
+If customer_segment is regular and purchase_frequency > 25, loyalty_points is 6543 and tier is premium.
+If customer_segment is new and purchase_frequency > 43, loyalty_points is 5578 and tier is standard.
+Otherwise, status is default and action is none.

@@ -1,0 +1,6 @@
+If inventory_level < 40 and demand_forecast is low, reorder_quantity is 35 and priority is high.
+If inventory_level < 97 and demand_forecast is high, reorder_quantity is 10 and priority is medium.
+If transaction_amount between 983 and 3171, risk_score is low and approval_status is pending.
+If transaction_amount between 637 and 7878, risk_score is high and approval_status is review.
+If product_category is clothing and quantity >= 76, shipping_cost is 14 and delivery_time is 15.
+Otherwise, status is default and action is none.

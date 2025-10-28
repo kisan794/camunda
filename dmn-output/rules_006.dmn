@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_rules_006"
+             name="rules 006"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="rules_006" name="rules 006">
+    <decisionTable id="decisionTable_rules_006" hitPolicy="FIRST">
+      <input id="input_customer_type" label="customer_type">
+        <inputExpression id="inputExpression_customer_type" typeRef="string">
+          <text>customer_type</text>
+        </inputExpression>
+      </input>
+      <input id="input_purchase_frequency" label="purchase_frequency">
+        <inputExpression id="inputExpression_purchase_frequency" typeRef="string">
+          <text>purchase_frequency</text>
+        </inputExpression>
+      </input>
+      <input id="input_total_value" label="total_value">
+        <inputExpression id="inputExpression_total_value" typeRef="string">
+          <text>total_value</text>
+        </inputExpression>
+      </input>
+      <input id="input_quantity" label="quantity">
+        <inputExpression id="inputExpression_quantity" typeRef="string">
+          <text>quantity</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_amount" label="transaction_amount">
+        <inputExpression id="inputExpression_transaction_amount" typeRef="string">
+          <text>transaction_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_user_age" label="user_age">
+        <inputExpression id="inputExpression_user_age" typeRef="string">
+          <text>user_age</text>
+        </inputExpression>
+      </input>
+      <input id="input_customer_segment" label="customer_segment">
+        <inputExpression id="inputExpression_customer_segment" typeRef="string">
+          <text>customer_segment</text>
+        </inputExpression>
+      </input>
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_demand_forecast" label="demand_forecast">
+        <inputExpression id="inputExpression_demand_forecast" typeRef="string">
+          <text>demand_forecast</text>
+        </inputExpression>
+      </input>
+      <input id="input_membership_level" label="membership_level">
+        <inputExpression id="inputExpression_membership_level" typeRef="string">
+          <text>membership_level</text>
+        </inputExpression>
+      </input>
+      <input id="input_inventory_level" label="inventory_level">
+        <inputExpression id="inputExpression_inventory_level" typeRef="string">
+          <text>inventory_level</text>
+        </inputExpression>
+      </input>
+      <input id="input_order_amount" label="order_amount">
+        <inputExpression id="inputExpression_order_amount" typeRef="string">
+          <text>order_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_region" label="region">
+        <inputExpression id="inputExpression_region" typeRef="string">
+          <text>region</text>
+        </inputExpression>
+      </input>
+      <input id="input_product_category" label="product_category">
+        <inputExpression id="inputExpression_product_category" typeRef="string">
+          <text>product_category</text>
+        </inputExpression>
+      </input>
+      <output id="output_shipping_cost" label="shipping_cost" name="shipping_cost" typeRef="string" />
+      <output id="output_risk_score" label="risk_score" name="risk_score" typeRef="string" />
+      <output id="output_reorder_quantity" label="reorder_quantity" name="reorder_quantity" typeRef="string" />
+      <output id="output_approval_status" label="approval_status" name="approval_status" typeRef="string" />
+      <output id="output_discount" label="discount" name="discount" typeRef="string" />
+      <output id="output_delivery_time" label="delivery_time" name="delivery_time" typeRef="string" />
+      <output id="output_priority" label="priority" name="priority" typeRef="string" />
+      <output id="output_tax_rate" label="tax_rate" name="tax_rate" typeRef="string" />
+      <output id="output_access_level" label="access_level" name="access_level" typeRef="string" />
+      <output id="output_loyalty_points" label="loyalty_points" name="loyalty_points" typeRef="string" />
+      <output id="output_tier" label="tier" name="tier" typeRef="string" />
+      <output id="output_action" label="action" name="action" typeRef="string" />
+      <output id="output_trial_period" label="trial_period" name="trial_period" typeRef="string" />
+      <output id="output_status" label="status" name="status" typeRef="string" />
+      <rule id="rule_007c45f1">
+        <inputEntry id="inputEntry_rule_007c45f1_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_quantity">
+          <text>&gt;= 69</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_007c45f1_product_category">
+          <text>&quot;clothing&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_shipping_cost">
+          <text>47</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_delivery_time">
+          <text>27</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_007c45f1_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_434db98e">
+        <inputEntry id="inputEntry_rule_434db98e_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_purchase_frequency">
+          <text>&gt; 8</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_customer_segment">
+          <text>&quot;vip&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_434db98e_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_loyalty_points">
+          <text>2078</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_tier">
+          <text>&quot;enterprise&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_434db98e_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_dfaeae4e">
+        <inputEntry id="inputEntry_rule_dfaeae4e_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_purchase_frequency">
+          <text>&gt; 39</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_customer_segment">
+          <text>&quot;regular&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dfaeae4e_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_loyalty_points">
+          <text>5908</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_tier">
+          <text>&quot;premium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dfaeae4e_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_1bc6fa6c">
+        <inputEntry id="inputEntry_rule_1bc6fa6c_customer_type">
+          <text>&quot;gold&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_order_amount">
+          <text>&gt; 7365</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_1bc6fa6c_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_discount">
+          <text>&quot;11%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_1bc6fa6c_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_44528a5c">
+        <inputEntry id="inputEntry_rule_44528a5c_customer_type">
+          <text>&quot;gold&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_order_amount">
+          <text>&gt; 1840</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_44528a5c_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_discount">
+          <text>&quot;6%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_priority">
+          <text>&quot;medium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_44528a5c_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_a20533e6">
+        <inputEntry id="inputEntry_rule_a20533e6_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_transaction_amount">
+          <text>[273..6966]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_a20533e6_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_risk_score">
+          <text>&quot;low&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_approval_status">
+          <text>&quot;approved&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_a20533e6_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_05d0db5f">
+        <inputEntry id="inputEntry_rule_05d0db5f_customer_type">
+          <text>&quot;bronze&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_order_amount">
+          <text>&gt; 5188</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_05d0db5f_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_discount">
+          <text>&quot;41%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_05d0db5f_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_c2c68ee8">
+        <inputEntry id="inputEntry_rule_c2c68ee8_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_demand_forecast">
+          <text>&quot;high&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_inventory_level">
+          <text>&lt; 98</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_c2c68ee8_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_reorder_quantity">
+          <text>86</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_c2c68ee8_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_dacd233d">
+        <inputEntry id="inputEntry_rule_dacd233d_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_total_value">
+          <text>&gt; 752</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_region">
+          <text>[&quot;central&quot;, &quot;central&quot;]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_dacd233d_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_tax_rate">
+          <text>&quot;14%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_dacd233d_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_57d175a2">
+        <inputEntry id="inputEntry_rule_57d175a2_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_transaction_amount">
+          <text>[780..8482]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_57d175a2_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_risk_score">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_approval_status">
+          <text>&quot;pending&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_57d175a2_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_aeeba15b">
+        <inputEntry id="inputEntry_rule_aeeba15b_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_user_age">
+          <text>&gt;= 21</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_membership_level">
+          <text>&quot;premium&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_aeeba15b_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_access_level">
+          <text>&quot;premium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_trial_period">
+          <text>84</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_aeeba15b_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_2fc8261d">
+        <inputEntry id="inputEntry_rule_2fc8261d_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_total_value">
+          <text>&gt; 4545</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_region">
+          <text>[&quot;central&quot;, &quot;central&quot;]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2fc8261d_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_tax_rate">
+          <text>&quot;6%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2fc8261d_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_0c66fcf5">
+        <inputEntry id="inputEntry_rule_0c66fcf5_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_total_value">
+          <text>&gt; 2749</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_region">
+          <text>[&quot;central&quot;, &quot;west&quot;]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_0c66fcf5_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_tax_rate">
+          <text>&quot;24%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_0c66fcf5_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_b3f1e116">
+        <inputEntry id="inputEntry_rule_b3f1e116_customer_type">
+          <text>&quot;bronze&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_order_amount">
+          <text>&gt; 9717</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_b3f1e116_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_discount">
+          <text>&quot;17%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_b3f1e116_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_13264dff">
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_customer_type">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_purchase_frequency">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_user_age">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_customer_segment">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_membership_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_order_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_region">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_13264dff_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_discount">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_access_level">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_loyalty_points">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_tier">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_action">
+          <text>&quot;none&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_trial_period">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_13264dff_status">
+          <text>&quot;default&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,13 @@
+If inventory_level < 35 and demand_forecast is medium, reorder_quantity is 69 and priority is low.
+If payment_method is debit_card and transaction_type is silver, processing_fee is 2% and settlement_time is 27.
+If region in (west, south) and total_value > 4636, tax_rate is 7%.
+If payment_method is bank_transfer and transaction_type is standard, processing_fee is 3% and settlement_time is 5.
+If product_category is books and quantity >= 60, shipping_cost is 35 and delivery_time is 9.
+If product_category is books and quantity >= 60, shipping_cost is 32 and delivery_time is 9.
+If region in (north, west) and total_value > 1590, tax_rate is 19%.
+If inventory_level < 38 and demand_forecast is medium, reorder_quantity is 54 and priority is low.
+If region in (central, central) and total_value > 2398, tax_rate is 15%.
+If user_age >= 49 and membership_level is premium, access_level is premium and trial_period is 20.
+If customer_segment is inactive and purchase_frequency > 6, loyalty_points is 3874 and tier is standard.
+If customer_type is premium and order_amount > 9219, discount is 24% and priority is high.
+Otherwise, status is default and action is none.

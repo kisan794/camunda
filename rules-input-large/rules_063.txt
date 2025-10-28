@@ -1,0 +1,20 @@
+If inventory_level < 84 and demand_forecast is low, reorder_quantity is 6 and priority is medium.
+If product_category is clothing and quantity >= 94, shipping_cost is 36 and delivery_time is 2.
+If customer_type is silver and order_amount > 4170, discount is 30% and priority is medium.
+If user_age >= 24 and membership_level is standard, access_level is standard and trial_period is 79.
+If product_category is furniture and quantity >= 37, shipping_cost is 27 and delivery_time is 15.
+If user_age >= 45 and membership_level is enterprise, access_level is premium and trial_period is 16.
+If inventory_level < 41 and demand_forecast is low, reorder_quantity is 67 and priority is medium.
+If user_age >= 21 and membership_level is enterprise, access_level is enterprise and trial_period is 77.
+If inventory_level < 48 and demand_forecast is medium, reorder_quantity is 80 and priority is medium.
+If transaction_amount between 886 and 4631, risk_score is low and approval_status is approved.
+If customer_type is silver and order_amount > 5541, discount is 26% and priority is high.
+If user_age >= 32 and membership_level is premium, access_level is premium and trial_period is 28.
+If inventory_level < 67 and demand_forecast is low, reorder_quantity is 18 and priority is high.
+If customer_type is standard and order_amount > 1361, discount is 38% and priority is medium.
+If product_category is books and quantity >= 75, shipping_cost is 6 and delivery_time is 14.
+If customer_type is gold and order_amount > 8223, discount is 30% and priority is low.
+If customer_segment is inactive and purchase_frequency > 3, loyalty_points is 9189 and tier is basic.
+If user_age >= 29 and membership_level is enterprise, access_level is enterprise and trial_period is 21.
+If product_category is books and quantity >= 16, shipping_cost is 36 and delivery_time is 15.
+Otherwise, status is default and action is none.

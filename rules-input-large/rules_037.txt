@@ -1,0 +1,11 @@
+If customer_segment is new and purchase_frequency > 28, loyalty_points is 1746 and tier is standard.
+If customer_type is premium and order_amount > 8105, discount is 14% and priority is medium.
+If inventory_level < 44 and demand_forecast is high, reorder_quantity is 58 and priority is medium.
+If customer_segment is new and purchase_frequency > 46, loyalty_points is 6516 and tier is standard.
+If transaction_amount between 158 and 4256, risk_score is medium and approval_status is rejected.
+If transaction_amount between 429 and 9934, risk_score is high and approval_status is approved.
+If customer_type is silver and order_amount > 2741, discount is 32% and priority is low.
+If customer_segment is regular and purchase_frequency > 6, loyalty_points is 9225 and tier is enterprise.
+If customer_segment is vip and purchase_frequency > 33, loyalty_points is 9602 and tier is basic.
+If customer_segment is new and purchase_frequency > 3, loyalty_points is 5538 and tier is standard.
+Otherwise, status is default and action is none.

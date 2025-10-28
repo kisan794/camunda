@@ -1,0 +1,9 @@
+If customer_type is silver and order_amount > 2890, discount is 37% and priority is medium.
+If product_category is furniture and quantity >= 88, shipping_cost is 9 and delivery_time is 7.
+If inventory_level < 59 and demand_forecast is medium, reorder_quantity is 77 and priority is low.
+If product_category is electronics and quantity >= 78, shipping_cost is 50 and delivery_time is 16.
+If product_category is books and quantity >= 80, shipping_cost is 19 and delivery_time is 29.
+If transaction_amount between 447 and 8942, risk_score is medium and approval_status is review.
+If transaction_amount between 945 and 7638, risk_score is low and approval_status is review.
+If transaction_amount between 447 and 8697, risk_score is high and approval_status is rejected.
+Otherwise, status is default and action is none.

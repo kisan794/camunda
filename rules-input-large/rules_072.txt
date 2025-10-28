@@ -1,0 +1,11 @@
+If product_category is furniture and quantity >= 97, shipping_cost is 19 and delivery_time is 5.
+If customer_segment is regular and purchase_frequency > 12, loyalty_points is 8281 and tier is enterprise.
+If inventory_level < 82 and demand_forecast is medium, reorder_quantity is 84 and priority is low.
+If payment_method is bank_transfer and transaction_type is bronze, processing_fee is 5% and settlement_time is 22.
+If payment_method is credit_card and transaction_type is gold, processing_fee is 5% and settlement_time is 17.
+If transaction_amount between 413 and 9810, risk_score is high and approval_status is pending.
+If customer_type is premium and order_amount > 3698, discount is 18% and priority is low.
+If payment_method is credit_card and transaction_type is bronze, processing_fee is 3% and settlement_time is 18.
+If customer_type is gold and order_amount > 739, discount is 20% and priority is low.
+If customer_segment is vip and purchase_frequency > 12, loyalty_points is 347 and tier is enterprise.
+Otherwise, status is default and action is none.

@@ -1,0 +1,13 @@
+If transaction_amount between 696 and 4795, risk_score is high and approval_status is pending.
+If region in (north, west) and total_value > 4273, tax_rate is 23%.
+If transaction_amount between 483 and 2535, risk_score is high and approval_status is approved.
+If product_category is electronics and quantity >= 35, shipping_cost is 35 and delivery_time is 24.
+If customer_segment is new and purchase_frequency > 46, loyalty_points is 2514 and tier is standard.
+If product_category is books and quantity >= 45, shipping_cost is 28 and delivery_time is 4.
+If transaction_amount between 714 and 4705, risk_score is high and approval_status is rejected.
+If inventory_level < 76 and demand_forecast is medium, reorder_quantity is 71 and priority is medium.
+If customer_type is bronze and order_amount > 5885, discount is 8% and priority is medium.
+If customer_segment is inactive and purchase_frequency > 27, loyalty_points is 8512 and tier is basic.
+If transaction_amount between 767 and 2163, risk_score is low and approval_status is pending.
+If payment_method is bank_transfer and transaction_type is gold, processing_fee is 5% and settlement_time is 17.
+Otherwise, status is default and action is none.

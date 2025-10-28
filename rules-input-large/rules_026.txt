@@ -1,0 +1,9 @@
+If customer_type is bronze and order_amount > 466, discount is 23% and priority is low.
+If customer_type is standard and order_amount > 3918, discount is 13% and priority is high.
+If customer_segment is vip and purchase_frequency > 5, loyalty_points is 4240 and tier is enterprise.
+If customer_segment is vip and purchase_frequency > 37, loyalty_points is 3406 and tier is enterprise.
+If product_category is clothing and quantity >= 4, shipping_cost is 37 and delivery_time is 3.
+If product_category is clothing and quantity >= 9, shipping_cost is 8 and delivery_time is 28.
+If payment_method is paypal and transaction_type is bronze, processing_fee is 3% and settlement_time is 30.
+If region in (east, west) and total_value > 1595, tax_rate is 18%.
+Otherwise, status is default and action is none.

@@ -1,0 +1,13 @@
+If region in (south, central) and total_value > 3100, tax_rate is 18%.
+If product_category is furniture and quantity >= 82, shipping_cost is 40 and delivery_time is 11.
+If user_age >= 27 and membership_level is standard, access_level is basic and trial_period is 59.
+If transaction_amount between 447 and 5994, risk_score is medium and approval_status is review.
+If transaction_amount between 281 and 8531, risk_score is high and approval_status is approved.
+If region in (south, east) and total_value > 4481, tax_rate is 13%.
+If customer_type is silver and order_amount > 550, discount is 8% and priority is low.
+If inventory_level < 67 and demand_forecast is medium, reorder_quantity is 34 and priority is medium.
+If transaction_amount between 883 and 7685, risk_score is medium and approval_status is review.
+If product_category is furniture and quantity >= 76, shipping_cost is 41 and delivery_time is 15.
+If region in (central, central) and total_value > 2435, tax_rate is 5%.
+If user_age >= 29 and membership_level is premium, access_level is premium and trial_period is 72.
+Otherwise, status is default and action is none.

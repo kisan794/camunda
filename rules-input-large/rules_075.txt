@@ -1,0 +1,21 @@
+If inventory_level < 90 and demand_forecast is medium, reorder_quantity is 81 and priority is high.
+If transaction_amount between 554 and 7355, risk_score is medium and approval_status is rejected.
+If inventory_level < 54 and demand_forecast is medium, reorder_quantity is 15 and priority is medium.
+If customer_type is silver and order_amount > 8371, discount is 50% and priority is medium.
+If transaction_amount between 307 and 6099, risk_score is low and approval_status is approved.
+If user_age >= 40 and membership_level is premium, access_level is premium and trial_period is 56.
+If customer_type is standard and order_amount > 4406, discount is 46% and priority is high.
+If payment_method is bank_transfer and transaction_type is bronze, processing_fee is 2% and settlement_time is 24.
+If user_age >= 60 and membership_level is premium, access_level is premium and trial_period is 64.
+If user_age >= 46 and membership_level is basic, access_level is enterprise and trial_period is 89.
+If transaction_amount between 615 and 4360, risk_score is low and approval_status is pending.
+If payment_method is debit_card and transaction_type is standard, processing_fee is 4% and settlement_time is 30.
+If user_age >= 33 and membership_level is enterprise, access_level is premium and trial_period is 40.
+If region in (north, north) and total_value > 966, tax_rate is 6%.
+If inventory_level < 84 and demand_forecast is low, reorder_quantity is 95 and priority is low.
+If product_category is clothing and quantity >= 9, shipping_cost is 39 and delivery_time is 18.
+If user_age >= 63 and membership_level is standard, access_level is standard and trial_period is 79.
+If user_age >= 47 and membership_level is basic, access_level is basic and trial_period is 50.
+If product_category is food and quantity >= 20, shipping_cost is 12 and delivery_time is 19.
+If inventory_level < 12 and demand_forecast is low, reorder_quantity is 8 and priority is low.
+Otherwise, status is default and action is none.

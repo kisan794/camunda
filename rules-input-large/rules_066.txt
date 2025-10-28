@@ -1,0 +1,17 @@
+If user_age >= 65 and membership_level is premium, access_level is premium and trial_period is 56.
+If region in (east, west) and total_value > 4822, tax_rate is 5%.
+If transaction_amount between 237 and 2180, risk_score is low and approval_status is approved.
+If user_age >= 65 and membership_level is enterprise, access_level is premium and trial_period is 60.
+If region in (north, west) and total_value > 2343, tax_rate is 24%.
+If region in (north, south) and total_value > 871, tax_rate is 14%.
+If user_age >= 65 and membership_level is enterprise, access_level is enterprise and trial_period is 25.
+If transaction_amount between 772 and 5664, risk_score is low and approval_status is pending.
+If customer_type is premium and order_amount > 3547, discount is 15% and priority is high.
+If customer_segment is new and purchase_frequency > 43, loyalty_points is 1011 and tier is standard.
+If transaction_amount between 638 and 6430, risk_score is high and approval_status is review.
+If region in (west, west) and total_value > 4573, tax_rate is 21%.
+If inventory_level < 67 and demand_forecast is medium, reorder_quantity is 72 and priority is high.
+If user_age >= 25 and membership_level is premium, access_level is premium and trial_period is 52.
+If customer_segment is inactive and purchase_frequency > 1, loyalty_points is 6937 and tier is basic.
+If transaction_amount between 143 and 9539, risk_score is medium and approval_status is approved.
+Otherwise, status is default and action is none.

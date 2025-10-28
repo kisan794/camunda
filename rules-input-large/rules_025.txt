@@ -1,0 +1,16 @@
+If customer_type is silver and order_amount > 1545, discount is 44% and priority is medium.
+If product_category is books and quantity >= 40, shipping_cost is 6 and delivery_time is 29.
+If transaction_amount between 723 and 6515, risk_score is medium and approval_status is approved.
+If region in (south, east) and total_value > 1699, tax_rate is 17%.
+If product_category is electronics and quantity >= 8, shipping_cost is 44 and delivery_time is 16.
+If user_age >= 20 and membership_level is standard, access_level is standard and trial_period is 63.
+If customer_segment is regular and purchase_frequency > 15, loyalty_points is 5085 and tier is premium.
+If user_age >= 43 and membership_level is basic, access_level is basic and trial_period is 10.
+If transaction_amount between 282 and 9678, risk_score is low and approval_status is approved.
+If customer_segment is new and purchase_frequency > 17, loyalty_points is 2735 and tier is standard.
+If payment_method is credit_card and transaction_type is standard, processing_fee is 2% and settlement_time is 14.
+If customer_type is bronze and order_amount > 6783, discount is 26% and priority is low.
+If inventory_level < 64 and demand_forecast is low, reorder_quantity is 85 and priority is medium.
+If payment_method is credit_card and transaction_type is silver, processing_fee is 2% and settlement_time is 24.
+If transaction_amount between 261 and 3459, risk_score is low and approval_status is pending.
+Otherwise, status is default and action is none.

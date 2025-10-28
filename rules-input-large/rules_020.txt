@@ -1,0 +1,6 @@
+If transaction_amount between 794 and 4539, risk_score is high and approval_status is review.
+If region in (west, central) and total_value > 1693, tax_rate is 24%.
+If product_category is clothing and quantity >= 9, shipping_cost is 17 and delivery_time is 7.
+If payment_method is bank_transfer and transaction_type is silver, processing_fee is 2% and settlement_time is 19.
+If customer_segment is vip and purchase_frequency > 21, loyalty_points is 8256 and tier is basic.
+Otherwise, status is default and action is none.

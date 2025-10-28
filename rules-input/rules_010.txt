@@ -1,0 +1,14 @@
+If customer_segment is regular and purchase_frequency > 19, loyalty_points is 4289 and tier is premium.
+If customer_segment is inactive and purchase_frequency > 31, loyalty_points is 8716 and tier is basic.
+If region in (north, central) and total_value > 1334, tax_rate is 23%.
+If product_category is books and quantity >= 40, shipping_cost is 15 and delivery_time is 19.
+If product_category is clothing and quantity >= 30, shipping_cost is 37 and delivery_time is 19.
+If region in (south, south) and total_value > 766, tax_rate is 14%.
+If customer_type is silver and order_amount > 8485, discount is 21% and priority is low.
+If transaction_amount between 951 and 8546, risk_score is medium and approval_status is review.
+If product_category is electronics and quantity >= 37, shipping_cost is 38 and delivery_time is 26.
+If inventory_level < 83 and demand_forecast is medium, reorder_quantity is 35 and priority is medium.
+If customer_segment is vip and purchase_frequency > 40, loyalty_points is 1359 and tier is enterprise.
+If payment_method is bank_transfer and transaction_type is gold, processing_fee is 1% and settlement_time is 23.
+If region in (north, west) and total_value > 4279, tax_rate is 21%.
+Otherwise, status is default and action is none.

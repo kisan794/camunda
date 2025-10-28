@@ -1,0 +1,12 @@
+If user_age >= 57 and membership_level is enterprise, access_level is enterprise and trial_period is 77.
+If user_age >= 51 and membership_level is basic, access_level is basic and trial_period is 82.
+If user_age >= 50 and membership_level is basic, access_level is enterprise and trial_period is 21.
+If product_category is food and quantity >= 15, shipping_cost is 41 and delivery_time is 14.
+If customer_segment is new and purchase_frequency > 22, loyalty_points is 5091 and tier is standard.
+If product_category is electronics and quantity >= 67, shipping_cost is 24 and delivery_time is 6.
+If inventory_level < 46 and demand_forecast is low, reorder_quantity is 5 and priority is medium.
+If user_age >= 25 and membership_level is standard, access_level is basic and trial_period is 69.
+If payment_method is credit_card and transaction_type is silver, processing_fee is 1% and settlement_time is 16.
+If transaction_amount between 283 and 8426, risk_score is low and approval_status is pending.
+If customer_type is bronze and order_amount > 1015, discount is 8% and priority is high.
+Otherwise, status is default and action is none.

@@ -1,0 +1,20 @@
+If payment_method is paypal and transaction_type is premium, processing_fee is 4% and settlement_time is 1.
+If customer_type is silver and order_amount > 2834, discount is 39% and priority is medium.
+If user_age >= 26 and membership_level is basic, access_level is enterprise and trial_period is 66.
+If customer_segment is new and purchase_frequency > 33, loyalty_points is 7318 and tier is standard.
+If payment_method is paypal and transaction_type is bronze, processing_fee is 5% and settlement_time is 17.
+If inventory_level < 98 and demand_forecast is high, reorder_quantity is 57 and priority is high.
+If payment_method is paypal and transaction_type is gold, processing_fee is 1% and settlement_time is 28.
+If product_category is books and quantity >= 5, shipping_cost is 24 and delivery_time is 24.
+If customer_segment is new and purchase_frequency > 10, loyalty_points is 2180 and tier is standard.
+If customer_type is bronze and order_amount > 7211, discount is 35% and priority is high.
+If product_category is clothing and quantity >= 86, shipping_cost is 40 and delivery_time is 5.
+If inventory_level < 89 and demand_forecast is low, reorder_quantity is 4 and priority is high.
+If customer_segment is new and purchase_frequency > 38, loyalty_points is 7074 and tier is standard.
+If inventory_level < 25 and demand_forecast is high, reorder_quantity is 58 and priority is low.
+If payment_method is debit_card and transaction_type is silver, processing_fee is 2% and settlement_time is 27.
+If transaction_amount between 145 and 9541, risk_score is high and approval_status is rejected.
+If product_category is books and quantity >= 6, shipping_cost is 14 and delivery_time is 14.
+If user_age >= 23 and membership_level is basic, access_level is basic and trial_period is 38.
+If user_age >= 55 and membership_level is enterprise, access_level is premium and trial_period is 46.
+Otherwise, status is default and action is none.

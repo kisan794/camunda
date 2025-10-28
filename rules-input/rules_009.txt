@@ -1,0 +1,12 @@
+If inventory_level < 24 and demand_forecast is high, reorder_quantity is 24 and priority is high.
+If region in (east, north) and total_value > 4631, tax_rate is 16%.
+If payment_method is bank_transfer and transaction_type is standard, processing_fee is 3% and settlement_time is 3.
+If transaction_amount between 201 and 2937, risk_score is high and approval_status is pending.
+If region in (north, north) and total_value > 4929, tax_rate is 5%.
+If customer_type is gold and order_amount > 1415, discount is 5% and priority is low.
+If region in (south, east) and total_value > 2917, tax_rate is 25%.
+If product_category is clothing and quantity >= 29, shipping_cost is 13 and delivery_time is 8.
+If inventory_level < 63 and demand_forecast is medium, reorder_quantity is 2 and priority is low.
+If customer_type is premium and order_amount > 3772, discount is 10% and priority is high.
+If inventory_level < 80 and demand_forecast is high, reorder_quantity is 8 and priority is medium.
+Otherwise, status is default and action is none.

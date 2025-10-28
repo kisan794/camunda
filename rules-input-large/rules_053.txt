@@ -1,0 +1,16 @@
+If inventory_level < 92 and demand_forecast is low, reorder_quantity is 20 and priority is high.
+If customer_type is premium and order_amount > 4675, discount is 34% and priority is high.
+If product_category is clothing and quantity >= 100, shipping_cost is 17 and delivery_time is 29.
+If product_category is clothing and quantity >= 94, shipping_cost is 36 and delivery_time is 3.
+If user_age >= 52 and membership_level is premium, access_level is standard and trial_period is 67.
+If transaction_amount between 186 and 4724, risk_score is low and approval_status is approved.
+If region in (south, north) and total_value > 3550, tax_rate is 7%.
+If product_category is furniture and quantity >= 17, shipping_cost is 37 and delivery_time is 16.
+If customer_segment is vip and purchase_frequency > 47, loyalty_points is 1232 and tier is enterprise.
+If user_age >= 21 and membership_level is enterprise, access_level is premium and trial_period is 36.
+If product_category is books and quantity >= 5, shipping_cost is 16 and delivery_time is 14.
+If inventory_level < 15 and demand_forecast is medium, reorder_quantity is 11 and priority is high.
+If user_age >= 43 and membership_level is basic, access_level is basic and trial_period is 26.
+If inventory_level < 29 and demand_forecast is high, reorder_quantity is 72 and priority is medium.
+If user_age >= 61 and membership_level is enterprise, access_level is premium and trial_period is 76.
+Otherwise, status is default and action is none.

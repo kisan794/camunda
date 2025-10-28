@@ -1,0 +1,20 @@
+If customer_type is silver and order_amount > 8237, discount is 8% and priority is medium.
+If user_age >= 18 and membership_level is enterprise, access_level is enterprise and trial_period is 73.
+If product_category is books and quantity >= 40, shipping_cost is 15 and delivery_time is 9.
+If payment_method is credit_card and transaction_type is gold, processing_fee is 5% and settlement_time is 27.
+If transaction_amount between 190 and 2594, risk_score is medium and approval_status is pending.
+If product_category is furniture and quantity >= 46, shipping_cost is 19 and delivery_time is 5.
+If transaction_amount between 780 and 9275, risk_score is low and approval_status is pending.
+If payment_method is paypal and transaction_type is silver, processing_fee is 2% and settlement_time is 14.
+If payment_method is debit_card and transaction_type is gold, processing_fee is 4% and settlement_time is 21.
+If product_category is clothing and quantity >= 49, shipping_cost is 31 and delivery_time is 28.
+If region in (central, east) and total_value > 1237, tax_rate is 10%.
+If product_category is books and quantity >= 30, shipping_cost is 21 and delivery_time is 19.
+If customer_type is gold and order_amount > 9146, discount is 43% and priority is medium.
+If user_age >= 28 and membership_level is premium, access_level is standard and trial_period is 47.
+If region in (west, west) and total_value > 1811, tax_rate is 24%.
+If customer_segment is new and purchase_frequency > 16, loyalty_points is 4936 and tier is standard.
+If user_age >= 48 and membership_level is standard, access_level is standard and trial_period is 67.
+If customer_segment is new and purchase_frequency > 50, loyalty_points is 2119 and tier is standard.
+If product_category is books and quantity >= 91, shipping_cost is 25 and delivery_time is 30.
+Otherwise, status is default and action is none.

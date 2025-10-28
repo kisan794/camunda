@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_rules_100"
+             name="rules 100"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="rules_100" name="rules 100">
+    <decisionTable id="decisionTable_rules_100" hitPolicy="FIRST">
+      <input id="input_total_value" label="total_value">
+        <inputExpression id="inputExpression_total_value" typeRef="string">
+          <text>total_value</text>
+        </inputExpression>
+      </input>
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_demand_forecast" label="demand_forecast">
+        <inputExpression id="inputExpression_demand_forecast" typeRef="string">
+          <text>demand_forecast</text>
+        </inputExpression>
+      </input>
+      <input id="input_inventory_level" label="inventory_level">
+        <inputExpression id="inputExpression_inventory_level" typeRef="string">
+          <text>inventory_level</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_amount" label="transaction_amount">
+        <inputExpression id="inputExpression_transaction_amount" typeRef="string">
+          <text>transaction_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_region" label="region">
+        <inputExpression id="inputExpression_region" typeRef="string">
+          <text>region</text>
+        </inputExpression>
+      </input>
+      <output id="output_reorder_quantity" label="reorder_quantity" name="reorder_quantity" typeRef="string" />
+      <output id="output_risk_score" label="risk_score" name="risk_score" typeRef="string" />
+      <output id="output_approval_status" label="approval_status" name="approval_status" typeRef="string" />
+      <output id="output_action" label="action" name="action" typeRef="string" />
+      <output id="output_priority" label="priority" name="priority" typeRef="string" />
+      <output id="output_tax_rate" label="tax_rate" name="tax_rate" typeRef="string" />
+      <output id="output_status" label="status" name="status" typeRef="string" />
+      <rule id="rule_27eda9f6">
+        <inputEntry id="inputEntry_rule_27eda9f6_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_27eda9f6_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_27eda9f6_demand_forecast">
+          <text>&quot;low&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_27eda9f6_inventory_level">
+          <text>&lt; 26</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_27eda9f6_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_27eda9f6_region">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_reorder_quantity">
+          <text>70</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_27eda9f6_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_2836ded9">
+        <inputEntry id="inputEntry_rule_2836ded9_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2836ded9_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2836ded9_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2836ded9_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2836ded9_transaction_amount">
+          <text>[794..2737]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_2836ded9_region">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_risk_score">
+          <text>&quot;medium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_approval_status">
+          <text>&quot;pending&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_2836ded9_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_88a2e58d">
+        <inputEntry id="inputEntry_rule_88a2e58d_total_value">
+          <text>&gt; 1020</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_88a2e58d_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_88a2e58d_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_88a2e58d_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_88a2e58d_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_88a2e58d_region">
+          <text>[&quot;north&quot;, &quot;west&quot;]</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_tax_rate">
+          <text>&quot;17%&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_88a2e58d_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_7cb34e27">
+        <inputEntry id="inputEntry_rule_7cb34e27_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7cb34e27_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7cb34e27_demand_forecast">
+          <text>&quot;medium&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7cb34e27_inventory_level">
+          <text>&lt; 14</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7cb34e27_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_7cb34e27_region">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_reorder_quantity">
+          <text>59</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_priority">
+          <text>&quot;low&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_7cb34e27_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_51bd61c5">
+        <inputEntry id="inputEntry_rule_51bd61c5_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_51bd61c5_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_51bd61c5_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_51bd61c5_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_51bd61c5_transaction_amount">
+          <text>[145..2088]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_51bd61c5_region">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_risk_score">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_approval_status">
+          <text>&quot;approved&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_51bd61c5_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_b5bfe918">
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_total_value">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_b5bfe918_region">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_action">
+          <text>&quot;none&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_tax_rate">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_b5bfe918_status">
+          <text>&quot;default&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

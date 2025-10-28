@@ -1,0 +1,11 @@
+If region in (south, east) and total_value > 4371, tax_rate is 8%.
+If customer_type is premium and order_amount > 3669, discount is 41% and priority is high.
+If customer_type is premium and order_amount > 8928, discount is 49% and priority is high.
+If customer_type is standard and order_amount > 1867, discount is 27% and priority is medium.
+If transaction_amount between 864 and 7204, risk_score is medium and approval_status is review.
+If payment_method is paypal and transaction_type is premium, processing_fee is 5% and settlement_time is 2.
+If customer_type is premium and order_amount > 7518, discount is 20% and priority is medium.
+If region in (south, north) and total_value > 876, tax_rate is 20%.
+If region in (west, south) and total_value > 1291, tax_rate is 22%.
+If region in (south, east) and total_value > 971, tax_rate is 10%.
+Otherwise, status is default and action is none.

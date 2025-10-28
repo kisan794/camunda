@@ -1,0 +1,11 @@
+If customer_type is standard and order_amount > 3863, discount is 44% and priority is low.
+If region in (north, north) and total_value > 2159, tax_rate is 7%.
+If region in (south, south) and total_value > 2855, tax_rate is 10%.
+If transaction_amount between 404 and 5403, risk_score is high and approval_status is rejected.
+If user_age >= 44 and membership_level is premium, access_level is premium and trial_period is 64.
+If user_age >= 24 and membership_level is premium, access_level is standard and trial_period is 31.
+If inventory_level < 91 and demand_forecast is high, reorder_quantity is 51 and priority is medium.
+If transaction_amount between 379 and 7973, risk_score is medium and approval_status is review.
+If customer_type is premium and order_amount > 4339, discount is 20% and priority is high.
+If customer_segment is inactive and purchase_frequency > 24, loyalty_points is 3042 and tier is standard.
+Otherwise, status is default and action is none.

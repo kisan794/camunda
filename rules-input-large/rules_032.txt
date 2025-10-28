@@ -1,0 +1,17 @@
+If inventory_level < 70 and demand_forecast is medium, reorder_quantity is 34 and priority is low.
+If inventory_level < 100 and demand_forecast is high, reorder_quantity is 72 and priority is medium.
+If payment_method is paypal and transaction_type is bronze, processing_fee is 2% and settlement_time is 24.
+If inventory_level < 31 and demand_forecast is low, reorder_quantity is 73 and priority is high.
+If customer_segment is inactive and purchase_frequency > 28, loyalty_points is 5447 and tier is basic.
+If payment_method is debit_card and transaction_type is standard, processing_fee is 4% and settlement_time is 11.
+If user_age >= 42 and membership_level is basic, access_level is basic and trial_period is 38.
+If customer_segment is regular and purchase_frequency > 50, loyalty_points is 935 and tier is premium.
+If payment_method is debit_card and transaction_type is bronze, processing_fee is 2% and settlement_time is 22.
+If customer_type is gold and order_amount > 3039, discount is 48% and priority is high.
+If customer_segment is inactive and purchase_frequency > 33, loyalty_points is 5101 and tier is basic.
+If payment_method is credit_card and transaction_type is premium, processing_fee is 5% and settlement_time is 20.
+If customer_segment is regular and purchase_frequency > 16, loyalty_points is 250 and tier is premium.
+If inventory_level < 10 and demand_forecast is medium, reorder_quantity is 52 and priority is low.
+If payment_method is bank_transfer and transaction_type is bronze, processing_fee is 2% and settlement_time is 19.
+If payment_method is paypal and transaction_type is silver, processing_fee is 5% and settlement_time is 11.
+Otherwise, status is default and action is none.

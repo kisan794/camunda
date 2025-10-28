@@ -1,0 +1,16 @@
+If customer_type is gold and order_amount > 2044, discount is 36% and priority is low.
+If user_age >= 48 and membership_level is premium, access_level is premium and trial_period is 28.
+If user_age >= 38 and membership_level is basic, access_level is basic and trial_period is 82.
+If payment_method is paypal and transaction_type is premium, processing_fee is 5% and settlement_time is 2.
+If payment_method is paypal and transaction_type is gold, processing_fee is 5% and settlement_time is 22.
+If payment_method is paypal and transaction_type is gold, processing_fee is 5% and settlement_time is 22.
+If user_age >= 18 and membership_level is enterprise, access_level is enterprise and trial_period is 85.
+If customer_type is silver and order_amount > 1650, discount is 11% and priority is medium.
+If inventory_level < 72 and demand_forecast is medium, reorder_quantity is 80 and priority is low.
+If customer_segment is inactive and purchase_frequency > 46, loyalty_points is 1580 and tier is standard.
+If transaction_amount between 254 and 2550, risk_score is low and approval_status is approved.
+If user_age >= 36 and membership_level is premium, access_level is standard and trial_period is 31.
+If payment_method is paypal and transaction_type is bronze, processing_fee is 3% and settlement_time is 10.
+If customer_segment is regular and purchase_frequency > 7, loyalty_points is 9577 and tier is premium.
+If customer_segment is inactive and purchase_frequency > 39, loyalty_points is 4758 and tier is basic.
+Otherwise, status is default and action is none.

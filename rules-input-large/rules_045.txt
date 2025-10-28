@@ -1,0 +1,16 @@
+If user_age >= 42 and membership_level is enterprise, access_level is enterprise and trial_period is 81.
+If customer_segment is vip and purchase_frequency > 48, loyalty_points is 2283 and tier is enterprise.
+If product_category is books and quantity >= 76, shipping_cost is 50 and delivery_time is 5.
+If transaction_amount between 764 and 9014, risk_score is low and approval_status is review.
+If transaction_amount between 838 and 4828, risk_score is high and approval_status is pending.
+If inventory_level < 87 and demand_forecast is high, reorder_quantity is 58 and priority is medium.
+If region in (south, central) and total_value > 3079, tax_rate is 25%.
+If user_age >= 49 and membership_level is premium, access_level is premium and trial_period is 28.
+If product_category is furniture and quantity >= 62, shipping_cost is 8 and delivery_time is 21.
+If user_age >= 58 and membership_level is enterprise, access_level is enterprise and trial_period is 85.
+If product_category is furniture and quantity >= 57, shipping_cost is 32 and delivery_time is 6.
+If user_age >= 56 and membership_level is premium, access_level is standard and trial_period is 15.
+If customer_type is silver and order_amount > 1288, discount is 5% and priority is high.
+If payment_method is debit_card and transaction_type is bronze, processing_fee is 3% and settlement_time is 15.
+If inventory_level < 44 and demand_forecast is low, reorder_quantity is 35 and priority is high.
+Otherwise, status is default and action is none.

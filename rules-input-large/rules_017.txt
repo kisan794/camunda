@@ -1,0 +1,13 @@
+If transaction_amount between 182 and 7885, risk_score is high and approval_status is review.
+If customer_segment is new and purchase_frequency > 4, loyalty_points is 2322 and tier is standard.
+If transaction_amount between 576 and 8827, risk_score is medium and approval_status is review.
+If inventory_level < 49 and demand_forecast is low, reorder_quantity is 42 and priority is medium.
+If product_category is clothing and quantity >= 6, shipping_cost is 22 and delivery_time is 15.
+If product_category is food and quantity >= 10, shipping_cost is 26 and delivery_time is 29.
+If customer_type is gold and order_amount > 3730, discount is 9% and priority is medium.
+If payment_method is credit_card and transaction_type is bronze, processing_fee is 2% and settlement_time is 29.
+If customer_segment is vip and purchase_frequency > 7, loyalty_points is 8992 and tier is basic.
+If user_age >= 42 and membership_level is basic, access_level is enterprise and trial_period is 74.
+If customer_segment is vip and purchase_frequency > 3, loyalty_points is 7222 and tier is enterprise.
+If customer_segment is regular and purchase_frequency > 25, loyalty_points is 6543 and tier is premium.
+Otherwise, status is default and action is none.

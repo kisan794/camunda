@@ -1,0 +1,17 @@
+If customer_type is bronze and order_amount > 8812, discount is 25% and priority is medium.
+If transaction_amount between 284 and 7879, risk_score is high and approval_status is approved.
+If payment_method is credit_card and transaction_type is bronze, processing_fee is 5% and settlement_time is 12.
+If user_age >= 41 and membership_level is premium, access_level is premium and trial_period is 60.
+If product_category is furniture and quantity >= 66, shipping_cost is 15 and delivery_time is 5.
+If user_age >= 51 and membership_level is standard, access_level is standard and trial_period is 55.
+If transaction_amount between 248 and 7489, risk_score is medium and approval_status is pending.
+If product_category is books and quantity >= 76, shipping_cost is 18 and delivery_time is 14.
+If user_age >= 38 and membership_level is basic, access_level is basic and trial_period is 90.
+If region in (south, north) and total_value > 1642, tax_rate is 8%.
+If customer_segment is inactive and purchase_frequency > 18, loyalty_points is 5286 and tier is basic.
+If transaction_amount between 326 and 2623, risk_score is high and approval_status is pending.
+If user_age >= 31 and membership_level is basic, access_level is basic and trial_period is 62.
+If user_age >= 32 and membership_level is premium, access_level is premium and trial_period is 52.
+If transaction_amount between 399 and 5946, risk_score is high and approval_status is review.
+If customer_segment is new and purchase_frequency > 4, loyalty_points is 390 and tier is standard.
+Otherwise, status is default and action is none.

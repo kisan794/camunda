@@ -1,0 +1,9 @@
+If product_category is clothing and quantity >= 4, shipping_cost is 40 and delivery_time is 14.
+If user_age >= 59 and membership_level is standard, access_level is standard and trial_period is 27.
+If customer_segment is vip and purchase_frequency > 32, loyalty_points is 3567 and tier is enterprise.
+If payment_method is debit_card and transaction_type is premium, processing_fee is 5% and settlement_time is 27.
+If payment_method is debit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 3.
+If payment_method is debit_card and transaction_type is standard, processing_fee is 3% and settlement_time is 25.
+If user_age >= 23 and membership_level is basic, access_level is basic and trial_period is 14.
+If customer_segment is new and purchase_frequency > 27, loyalty_points is 862 and tier is standard.
+Otherwise, status is default and action is none.

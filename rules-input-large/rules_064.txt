@@ -1,0 +1,18 @@
+If payment_method is paypal and transaction_type is gold, processing_fee is 1% and settlement_time is 8.
+If user_age >= 28 and membership_level is premium, access_level is standard and trial_period is 43.
+If user_age >= 28 and membership_level is standard, access_level is standard and trial_period is 43.
+If user_age >= 18 and membership_level is basic, access_level is enterprise and trial_period is 25.
+If payment_method is debit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 22.
+If transaction_amount between 875 and 3063, risk_score is low and approval_status is pending.
+If transaction_amount between 884 and 9134, risk_score is low and approval_status is review.
+If region in (north, north) and total_value > 898, tax_rate is 13%.
+If customer_type is gold and order_amount > 2840, discount is 33% and priority is medium.
+If customer_type is premium and order_amount > 4499, discount is 42% and priority is medium.
+If region in (west, south) and total_value > 588, tax_rate is 25%.
+If inventory_level < 79 and demand_forecast is low, reorder_quantity is 74 and priority is high.
+If customer_segment is new and purchase_frequency > 22, loyalty_points is 1858 and tier is standard.
+If payment_method is bank_transfer and transaction_type is gold, processing_fee is 1% and settlement_time is 13.
+If customer_type is bronze and order_amount > 2580, discount is 15% and priority is low.
+If customer_segment is vip and purchase_frequency > 24, loyalty_points is 9793 and tier is enterprise.
+If region in (west, west) and total_value > 517, tax_rate is 24%.
+Otherwise, status is default and action is none.

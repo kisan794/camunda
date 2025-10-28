@@ -1,0 +1,18 @@
+If customer_segment is new and purchase_frequency > 13, loyalty_points is 2631 and tier is standard.
+If customer_segment is regular and purchase_frequency > 43, loyalty_points is 9713 and tier is premium.
+If user_age >= 29 and membership_level is premium, access_level is premium and trial_period is 32.
+If user_age >= 20 and membership_level is premium, access_level is standard and trial_period is 87.
+If product_category is clothing and quantity >= 84, shipping_cost is 44 and delivery_time is 2.
+If region in (north, south) and total_value > 2802, tax_rate is 14%.
+If product_category is food and quantity >= 5, shipping_cost is 23 and delivery_time is 3.
+If transaction_amount between 957 and 5848, risk_score is high and approval_status is pending.
+If product_category is clothing and quantity >= 64, shipping_cost is 46 and delivery_time is 5.
+If user_age >= 62 and membership_level is basic, access_level is enterprise and trial_period is 33.
+If payment_method is paypal and transaction_type is gold, processing_fee is 1% and settlement_time is 18.
+If region in (central, north) and total_value > 2853, tax_rate is 15%.
+If payment_method is bank_transfer and transaction_type is standard, processing_fee is 4% and settlement_time is 9.
+If transaction_amount between 302 and 8905, risk_score is high and approval_status is pending.
+If product_category is furniture and quantity >= 67, shipping_cost is 49 and delivery_time is 7.
+If transaction_amount between 844 and 3688, risk_score is low and approval_status is pending.
+If user_age >= 26 and membership_level is enterprise, access_level is enterprise and trial_period is 17.
+Otherwise, status is default and action is none.

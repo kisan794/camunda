@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="definitions_rules_085"
+             name="rules 085"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="rules_085" name="rules 085">
+    <decisionTable id="decisionTable_rules_085" hitPolicy="FIRST">
+      <input id="input_1" label="1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>1</text>
+        </inputExpression>
+      </input>
+      <input id="input_quantity" label="quantity">
+        <inputExpression id="inputExpression_quantity" typeRef="string">
+          <text>quantity</text>
+        </inputExpression>
+      </input>
+      <input id="input_demand_forecast" label="demand_forecast">
+        <inputExpression id="inputExpression_demand_forecast" typeRef="string">
+          <text>demand_forecast</text>
+        </inputExpression>
+      </input>
+      <input id="input_inventory_level" label="inventory_level">
+        <inputExpression id="inputExpression_inventory_level" typeRef="string">
+          <text>inventory_level</text>
+        </inputExpression>
+      </input>
+      <input id="input_transaction_amount" label="transaction_amount">
+        <inputExpression id="inputExpression_transaction_amount" typeRef="string">
+          <text>transaction_amount</text>
+        </inputExpression>
+      </input>
+      <input id="input_product_category" label="product_category">
+        <inputExpression id="inputExpression_product_category" typeRef="string">
+          <text>product_category</text>
+        </inputExpression>
+      </input>
+      <output id="output_reorder_quantity" label="reorder_quantity" name="reorder_quantity" typeRef="string" />
+      <output id="output_risk_score" label="risk_score" name="risk_score" typeRef="string" />
+      <output id="output_shipping_cost" label="shipping_cost" name="shipping_cost" typeRef="string" />
+      <output id="output_approval_status" label="approval_status" name="approval_status" typeRef="string" />
+      <output id="output_action" label="action" name="action" typeRef="string" />
+      <output id="output_delivery_time" label="delivery_time" name="delivery_time" typeRef="string" />
+      <output id="output_priority" label="priority" name="priority" typeRef="string" />
+      <output id="output_status" label="status" name="status" typeRef="string" />
+      <rule id="rule_ce2a91db">
+        <inputEntry id="inputEntry_rule_ce2a91db_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ce2a91db_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ce2a91db_demand_forecast">
+          <text>&quot;low&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ce2a91db_inventory_level">
+          <text>&lt; 40</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ce2a91db_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ce2a91db_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_reorder_quantity">
+          <text>35</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_priority">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ce2a91db_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_bb1e2807">
+        <inputEntry id="inputEntry_rule_bb1e2807_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_bb1e2807_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_bb1e2807_demand_forecast">
+          <text>&quot;high&quot;</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_bb1e2807_inventory_level">
+          <text>&lt; 97</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_bb1e2807_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_bb1e2807_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_reorder_quantity">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_priority">
+          <text>&quot;medium&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_bb1e2807_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_34d6e608">
+        <inputEntry id="inputEntry_rule_34d6e608_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_34d6e608_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_34d6e608_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_34d6e608_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_34d6e608_transaction_amount">
+          <text>[983..3171]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_34d6e608_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_risk_score">
+          <text>&quot;low&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_approval_status">
+          <text>&quot;pending&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_34d6e608_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_def85d73">
+        <inputEntry id="inputEntry_rule_def85d73_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_def85d73_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_def85d73_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_def85d73_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_def85d73_transaction_amount">
+          <text>[637..7878]</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_def85d73_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_risk_score">
+          <text>&quot;high&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_approval_status">
+          <text>&quot;review&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_def85d73_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_ae849806">
+        <inputEntry id="inputEntry_rule_ae849806_1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ae849806_quantity">
+          <text>&gt;= 76</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ae849806_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ae849806_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ae849806_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_ae849806_product_category">
+          <text>&quot;clothing&quot;</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_shipping_cost">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_action">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_delivery_time">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_ae849806_status">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule_otherwise_3d1a2970">
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_1">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_quantity">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_demand_forecast">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_inventory_level">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_transaction_amount">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="inputEntry_rule_otherwise_3d1a2970_product_category">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_reorder_quantity">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_risk_score">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_shipping_cost">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_approval_status">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_action">
+          <text>&quot;none&quot;</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_delivery_time">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_priority">
+          <text>null</text>
+        </outputEntry>
+        <outputEntry id="outputEntry_rule_otherwise_3d1a2970_status">
+          <text>&quot;default&quot;</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

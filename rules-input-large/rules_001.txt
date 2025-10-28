@@ -1,0 +1,8 @@
+If region in (west, south) and total_value > 4364, tax_rate is 15%.
+If inventory_level < 65 and demand_forecast is low, reorder_quantity is 43 and priority is low.
+If product_category is food and quantity >= 25, shipping_cost is 27 and delivery_time is 13.
+If customer_segment is inactive and purchase_frequency > 5, loyalty_points is 4174 and tier is basic.
+If payment_method is debit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 23.
+If user_age >= 58 and membership_level is basic, access_level is enterprise and trial_period is 41.
+If customer_segment is regular and purchase_frequency > 18, loyalty_points is 6703 and tier is enterprise.
+Otherwise, status is default and action is none.

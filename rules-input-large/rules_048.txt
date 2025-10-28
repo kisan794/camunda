@@ -1,0 +1,16 @@
+If region in (east, north) and total_value > 4833, tax_rate is 21%.
+If user_age >= 38 and membership_level is basic, access_level is basic and trial_period is 78.
+If region in (south, central) and total_value > 4640, tax_rate is 5%.
+If user_age >= 38 and membership_level is basic, access_level is basic and trial_period is 46.
+If transaction_amount between 597 and 7290, risk_score is low and approval_status is review.
+If inventory_level < 47 and demand_forecast is low, reorder_quantity is 33 and priority is medium.
+If region in (west, west) and total_value > 1832, tax_rate is 16%.
+If product_category is furniture and quantity >= 46, shipping_cost is 23 and delivery_time is 15.
+If customer_type is premium and order_amount > 2844, discount is 43% and priority is high.
+If inventory_level < 15 and demand_forecast is low, reorder_quantity is 94 and priority is high.
+If payment_method is credit_card and transaction_type is bronze, processing_fee is 3% and settlement_time is 18.
+If customer_segment is new and purchase_frequency > 38, loyalty_points is 9975 and tier is standard.
+If payment_method is paypal and transaction_type is silver, processing_fee is 2% and settlement_time is 4.
+If payment_method is paypal and transaction_type is premium, processing_fee is 5% and settlement_time is 2.
+If user_age >= 65 and membership_level is enterprise, access_level is premium and trial_period is 25.
+Otherwise, status is default and action is none.

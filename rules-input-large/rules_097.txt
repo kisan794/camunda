@@ -1,0 +1,19 @@
+If transaction_amount between 773 and 6566, risk_score is medium and approval_status is review.
+If customer_segment is inactive and purchase_frequency > 20, loyalty_points is 1139 and tier is standard.
+If customer_type is bronze and order_amount > 4721, discount is 39% and priority is high.
+If region in (north, north) and total_value > 4825, tax_rate is 21%.
+If user_age >= 38 and membership_level is basic, access_level is enterprise and trial_period is 45.
+If inventory_level < 98 and demand_forecast is medium, reorder_quantity is 6 and priority is high.
+If customer_type is gold and order_amount > 7450, discount is 43% and priority is medium.
+If inventory_level < 90 and demand_forecast is low, reorder_quantity is 72 and priority is medium.
+If product_category is furniture and quantity >= 17, shipping_cost is 43 and delivery_time is 6.
+If user_age >= 55 and membership_level is standard, access_level is standard and trial_period is 83.
+If region in (west, south) and total_value > 1126, tax_rate is 25%.
+If transaction_amount between 203 and 4922, risk_score is low and approval_status is rejected.
+If payment_method is paypal and transaction_type is gold, processing_fee is 1% and settlement_time is 6.
+If transaction_amount between 236 and 9387, risk_score is medium and approval_status is approved.
+If product_category is furniture and quantity >= 63, shipping_cost is 18 and delivery_time is 12.
+If transaction_amount between 177 and 6518, risk_score is low and approval_status is pending.
+If product_category is clothing and quantity >= 9, shipping_cost is 25 and delivery_time is 17.
+If payment_method is paypal and transaction_type is premium, processing_fee is 4% and settlement_time is 21.
+Otherwise, status is default and action is none.

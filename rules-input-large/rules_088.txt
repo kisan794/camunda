@@ -1,0 +1,19 @@
+If transaction_amount between 520 and 2817, risk_score is low and approval_status is review.
+If transaction_amount between 862 and 9465, risk_score is high and approval_status is approved.
+If transaction_amount between 296 and 4042, risk_score is medium and approval_status is rejected.
+If region in (west, central) and total_value > 2927, tax_rate is 5%.
+If user_age >= 65 and membership_level is enterprise, access_level is premium and trial_period is 73.
+If product_category is electronics and quantity >= 8, shipping_cost is 8 and delivery_time is 16.
+If user_age >= 27 and membership_level is premium, access_level is basic and trial_period is 78.
+If transaction_amount between 425 and 9468, risk_score is high and approval_status is approved.
+If inventory_level < 12 and demand_forecast is high, reorder_quantity is 36 and priority is low.
+If customer_segment is inactive and purchase_frequency > 44, loyalty_points is 328 and tier is standard.
+If product_category is food and quantity >= 10, shipping_cost is 28 and delivery_time is 9.
+If customer_type is standard and order_amount > 5678, discount is 26% and priority is low.
+If transaction_amount between 304 and 8006, risk_score is medium and approval_status is pending.
+If transaction_amount between 140 and 8744, risk_score is medium and approval_status is rejected.
+If region in (central, east) and total_value > 3237, tax_rate is 15%.
+If user_age >= 31 and membership_level is standard, access_level is basic and trial_period is 74.
+If user_age >= 43 and membership_level is basic, access_level is basic and trial_period is 14.
+If inventory_level < 95 and demand_forecast is medium, reorder_quantity is 89 and priority is low.
+Otherwise, status is default and action is none.

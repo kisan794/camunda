@@ -1,0 +1,15 @@
+If product_category is clothing and quantity >= 69, shipping_cost is 47 and delivery_time is 27.
+If customer_segment is vip and purchase_frequency > 8, loyalty_points is 2078 and tier is enterprise.
+If customer_segment is regular and purchase_frequency > 39, loyalty_points is 5908 and tier is premium.
+If customer_type is gold and order_amount > 7365, discount is 11% and priority is high.
+If customer_type is gold and order_amount > 1840, discount is 6% and priority is medium.
+If transaction_amount between 273 and 6966, risk_score is low and approval_status is approved.
+If customer_type is bronze and order_amount > 5188, discount is 41% and priority is high.
+If inventory_level < 98 and demand_forecast is high, reorder_quantity is 86 and priority is high.
+If region in (central, central) and total_value > 752, tax_rate is 14%.
+If transaction_amount between 780 and 8482, risk_score is high and approval_status is pending.
+If user_age >= 21 and membership_level is premium, access_level is premium and trial_period is 84.
+If region in (central, central) and total_value > 4545, tax_rate is 6%.
+If region in (central, west) and total_value > 2749, tax_rate is 24%.
+If customer_type is bronze and order_amount > 9717, discount is 17% and priority is high.
+Otherwise, status is default and action is none.

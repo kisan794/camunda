@@ -1,0 +1,13 @@
+If inventory_level < 41 and demand_forecast is high, reorder_quantity is 68 and priority is medium.
+If payment_method is credit_card and transaction_type is standard, processing_fee is 2% and settlement_time is 4.
+If payment_method is debit_card and transaction_type is premium, processing_fee is 5% and settlement_time is 17.
+If customer_type is silver and order_amount > 8037, discount is 38% and priority is low.
+If inventory_level < 22 and demand_forecast is low, reorder_quantity is 2 and priority is low.
+If transaction_amount between 169 and 2905, risk_score is high and approval_status is pending.
+If user_age >= 33 and membership_level is enterprise, access_level is premium and trial_period is 52.
+If customer_type is bronze and order_amount > 1439, discount is 18% and priority is low.
+If inventory_level < 90 and demand_forecast is low, reorder_quantity is 69 and priority is high.
+If payment_method is credit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 27.
+If transaction_amount between 785 and 4775, risk_score is low and approval_status is pending.
+If region in (north, north) and total_value > 4159, tax_rate is 12%.
+Otherwise, status is default and action is none.

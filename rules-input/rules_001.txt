@@ -1,0 +1,8 @@
+If customer_segment is inactive and purchase_frequency > 25, loyalty_points is 5061 and tier is basic.
+If user_age >= 23 and membership_level is basic, access_level is basic and trial_period is 18.
+If customer_segment is new and purchase_frequency > 33, loyalty_points is 2152 and tier is standard.
+If transaction_amount between 142 and 9293, risk_score is low and approval_status is pending.
+If inventory_level < 29 and demand_forecast is medium, reorder_quantity is 35 and priority is low.
+If product_category is clothing and quantity >= 51, shipping_cost is 31 and delivery_time is 10.
+If customer_type is standard and order_amount > 657, discount is 13% and priority is high.
+Otherwise, status is default and action is none.

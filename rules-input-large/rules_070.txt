@@ -1,0 +1,15 @@
+If inventory_level < 93 and demand_forecast is low, reorder_quantity is 94 and priority is medium.
+If region in (south, north) and total_value > 3151, tax_rate is 6%.
+If inventory_level < 46 and demand_forecast is low, reorder_quantity is 92 and priority is high.
+If inventory_level < 61 and demand_forecast is high, reorder_quantity is 6 and priority is medium.
+If transaction_amount between 402 and 7095, risk_score is low and approval_status is approved.
+If customer_segment is new and purchase_frequency > 16, loyalty_points is 7935 and tier is standard.
+If user_age >= 18 and membership_level is basic, access_level is enterprise and trial_period is 37.
+If product_category is food and quantity >= 44, shipping_cost is 33 and delivery_time is 3.
+If customer_segment is inactive and purchase_frequency > 28, loyalty_points is 6213 and tier is standard.
+If customer_type is gold and order_amount > 3075, discount is 45% and priority is high.
+If customer_type is gold and order_amount > 2939, discount is 11% and priority is high.
+If region in (west, south) and total_value > 951, tax_rate is 18%.
+If inventory_level < 65 and demand_forecast is low, reorder_quantity is 31 and priority is high.
+If payment_method is bank_transfer and transaction_type is bronze, processing_fee is 2% and settlement_time is 17.
+Otherwise, status is default and action is none.

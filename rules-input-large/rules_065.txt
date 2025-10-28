@@ -1,0 +1,8 @@
+If customer_type is premium and order_amount > 7558, discount is 13% and priority is low.
+If customer_segment is regular and purchase_frequency > 43, loyalty_points is 8112 and tier is premium.
+If customer_segment is new and purchase_frequency > 2, loyalty_points is 637 and tier is standard.
+If customer_type is premium and order_amount > 3203, discount is 39% and priority is high.
+If customer_segment is inactive and purchase_frequency > 48, loyalty_points is 1732 and tier is basic.
+If payment_method is paypal and transaction_type is silver, processing_fee is 2% and settlement_time is 14.
+If payment_method is paypal and transaction_type is silver, processing_fee is 2% and settlement_time is 12.
+Otherwise, status is default and action is none.

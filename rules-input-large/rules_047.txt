@@ -1,0 +1,17 @@
+If payment_method is bank_transfer and transaction_type is standard, processing_fee is 4% and settlement_time is 9.
+If product_category is food and quantity >= 24, shipping_cost is 43 and delivery_time is 3.
+If inventory_level < 35 and demand_forecast is low, reorder_quantity is 23 and priority is high.
+If customer_segment is new and purchase_frequency > 3, loyalty_points is 9238 and tier is standard.
+If user_age >= 35 and membership_level is standard, access_level is standard and trial_period is 79.
+If user_age >= 48 and membership_level is premium, access_level is premium and trial_period is 32.
+If customer_segment is regular and purchase_frequency > 25, loyalty_points is 9612 and tier is premium.
+If transaction_amount between 133 and 3222, risk_score is low and approval_status is review.
+If transaction_amount between 558 and 7251, risk_score is high and approval_status is pending.
+If customer_type is silver and order_amount > 650, discount is 5% and priority is medium.
+If inventory_level < 73 and demand_forecast is medium, reorder_quantity is 99 and priority is high.
+If payment_method is debit_card and transaction_type is premium, processing_fee is 5% and settlement_time is 5.
+If customer_segment is vip and purchase_frequency > 49, loyalty_points is 2884 and tier is enterprise.
+If inventory_level < 32 and demand_forecast is medium, reorder_quantity is 16 and priority is low.
+If customer_segment is new and purchase_frequency > 49, loyalty_points is 7835 and tier is premium.
+If customer_segment is vip and purchase_frequency > 33, loyalty_points is 702 and tier is basic.
+Otherwise, status is default and action is none.

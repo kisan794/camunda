@@ -1,0 +1,10 @@
+If customer_type is premium and order_amount > 901, discount is 32% and priority is medium.
+If inventory_level < 54 and demand_forecast is high, reorder_quantity is 30 and priority is medium.
+If customer_segment is vip and purchase_frequency > 9, loyalty_points is 5878 and tier is enterprise.
+If product_category is clothing and quantity >= 59, shipping_cost is 45 and delivery_time is 17.
+If user_age >= 34 and membership_level is basic, access_level is enterprise and trial_period is 85.
+If customer_type is premium and order_amount > 4378, discount is 18% and priority is low.
+If user_age >= 46 and membership_level is basic, access_level is enterprise and trial_period is 13.
+If transaction_amount between 679 and 8929, risk_score is low and approval_status is rejected.
+If customer_type is silver and order_amount > 4337, discount is 18% and priority is medium.
+Otherwise, status is default and action is none.

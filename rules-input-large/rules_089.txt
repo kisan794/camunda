@@ -1,0 +1,7 @@
+If transaction_amount between 512 and 7753, risk_score is medium and approval_status is pending.
+If product_category is furniture and quantity >= 91, shipping_cost is 32 and delivery_time is 30.
+If product_category is food and quantity >= 34, shipping_cost is 25 and delivery_time is 3.
+If payment_method is credit_card and transaction_type is gold, processing_fee is 1% and settlement_time is 17.
+If product_category is clothing and quantity >= 69, shipping_cost is 19 and delivery_time is 18.
+If product_category is clothing and quantity >= 9, shipping_cost is 5 and delivery_time is 17.
+Otherwise, status is default and action is none.

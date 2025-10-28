@@ -1,0 +1,19 @@
+If product_category is furniture and quantity >= 7, shipping_cost is 23 and delivery_time is 15.
+If payment_method is credit_card and transaction_type is standard, processing_fee is 4% and settlement_time is 5.
+If product_category is electronics and quantity >= 43, shipping_cost is 5 and delivery_time is 11.
+If customer_segment is inactive and purchase_frequency > 24, loyalty_points is 2042 and tier is standard.
+If user_age >= 65 and membership_level is enterprise, access_level is premium and trial_period is 8.
+If payment_method is bank_transfer and transaction_type is silver, processing_fee is 2% and settlement_time is 19.
+If user_age >= 24 and membership_level is standard, access_level is standard and trial_period is 43.
+If inventory_level < 22 and demand_forecast is medium, reorder_quantity is 93 and priority is low.
+If customer_segment is inactive and purchase_frequency > 12, loyalty_points is 7030 and tier is standard.
+If transaction_amount between 526 and 2029, risk_score is high and approval_status is approved.
+If user_age >= 22 and membership_level is basic, access_level is basic and trial_period is 66.
+If product_category is food and quantity >= 4, shipping_cost is 38 and delivery_time is 13.
+If customer_segment is new and purchase_frequency > 29, loyalty_points is 8748 and tier is premium.
+If product_category is electronics and quantity >= 78, shipping_cost is 38 and delivery_time is 6.
+If transaction_amount between 521 and 4512, risk_score is low and approval_status is pending.
+If payment_method is bank_transfer and transaction_type is silver, processing_fee is 1% and settlement_time is 18.
+If region in (west, central) and total_value > 4861, tax_rate is 8%.
+If transaction_amount between 890 and 7583, risk_score is medium and approval_status is approved.
+Otherwise, status is default and action is none.

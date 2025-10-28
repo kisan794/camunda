@@ -1,0 +1,10 @@
+If transaction_amount between 596 and 2100, risk_score is low and approval_status is review.
+If customer_type is premium and order_amount > 1288, discount is 16% and priority is low.
+If payment_method is bank_transfer and transaction_type is premium, processing_fee is 5% and settlement_time is 7.
+If customer_segment is vip and purchase_frequency > 33, loyalty_points is 6701 and tier is basic.
+If payment_method is bank_transfer and transaction_type is premium, processing_fee is 4% and settlement_time is 26.
+If region in (north, north) and total_value > 1840, tax_rate is 18%.
+If product_category is electronics and quantity >= 13, shipping_cost is 31 and delivery_time is 2.
+If inventory_level < 17 and demand_forecast is low, reorder_quantity is 61 and priority is high.
+If customer_type is bronze and order_amount > 7022, discount is 35% and priority is medium.
+Otherwise, status is default and action is none.
