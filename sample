@@ -1,0 +1,48 @@
+System Resiliency & Fault Tolerance
+The scope of this architecture is system-to-system integration with external third-party systems using asynchronous messaging. The system integrates with an external HTTP-based system by consuming messages from RabbitMQ (MOM) and invoking the external service as part of message processing. Since the external system is outside our operational control, there is no guarantee of availability, responsiveness, or reliability.
+
+External system failures may include, but are not limited to:
+
+Temporary unavailability or downtime
+
+Slow response times or timeouts
+
+Throttling or rate limiting
+
+Transient failures such as HTTP 503 (Service Unavailable)
+
+Given these constraints, the architecture must:
+
+Protect the internal system from cascading failures caused by external system instability
+
+Prevent message loss during transient or prolonged outages
+
+Avoid overwhelming the external system during the recovery periods
+
+Ensure operational visibility and auditability for failed messages
+
+Support manual intervention when automated recovery is no longer effective
+
+To address these requirements, the architecture adopts a Circuit Breaker pattern combined with asynchronous retry queues and a Dead Letter Queue (DLQ). This design ensures resilient, fault-tolerant integration with external systems whose availability and performance cannot be guaranteed.
+
+External System Unavailable Message lifecycle (End-to-End)
+
+Example: Message processing
+
+Message arrives in the Main Queue (It can be education/ employment/criminal)
+
+The listener picks it and tries to send it to Recombo AI (External System)
+
+HTTP call fails with 503  
+
+Message sent to Retry Queue  (R1Q)
+
+After delay → message returns to Main Queue
+
+Retry happens
+
+If fails again → sent to R2Q
+
+Same for R3Q
+
+If failure persists after max retries → DLQ
