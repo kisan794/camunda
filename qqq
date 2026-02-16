@@ -1,0 +1,5 @@
+ FacetOperation facetOperation = Aggregation.facet()
+                .and(Aggregation.count().as("count")).as("total")
+                .and(sortOperation, skipOperation(reportsRequestDTO.getStartPage(), reportsRequestDTO.getBatchSize()), 
+                     limitOperation(reportsRequestDTO.getBatchSize())).as("data");
+        
