@@ -1,5 +1,18 @@
- FacetOperation facetOperation = Aggregation.facet()
+FacetOperation actionFacet = Aggregation.facet()
                 .and(Aggregation.count().as("count")).as("total")
                 .and(sortOperation, skipOperation(reportsRequestDTO.getStartPage(), reportsRequestDTO.getBatchSize()), 
                      limitOperation(reportsRequestDTO.getBatchSize())).as("data");
-        
+
+
+Aggregation actionAggregation = Aggregation.newAggregation(actionMatch, actionGroup, actionFacet, actionProjection)
+                .withOptions(aggregationOptions);
+
+
+FacetOperation statusFacet = Aggregation.facet()
+                .and(Aggregation.count().as("count")).as("total")
+                .and(sortOperation, skipOperation(reportsRequestDTO.getStartPage(), reportsRequestDTO.getBatchSize()), 
+                     limitOperation(reportsRequestDTO.getBatchSize())).as("data");
+
+
+Aggregation statusAggregation = Aggregation.newAggregation(statusMatch, statusGroup, statusFacet, statusProjection)
+                .withOptions(aggregationOptions);
