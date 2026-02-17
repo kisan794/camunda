@@ -1,24 +1,50 @@
-Aggregation aggregation;
-    if(changeLogFilters.getSort() != null && changeLogFilters.getSort().equals(SORT_LAST_MODIFIED_BY)){
-      aggregation = Aggregation.newAggregation(
-              matchOperation, 
-              addFieldsOperation,
-              group(HON).first(Aggregation.ROOT).as(DOC),
-              replaceRoot(DOC),
-              sort, 
-              skip, 
-              limit, 
-              projectSelectiveData
-      ).withOptions(aggregationOptionsToAllowDiskUse);
-    } else {
-      aggregation = Aggregation.newAggregation(
-              matchOperation, 
-              group(HON).first(Aggregation.ROOT).as(DOC),
-              replaceRoot(DOC),
-              sort, 
-              skip, 
-              limit,
-              addFieldsOperation,
-              projectSelectiveData
-      ).withOptions(aggregationOptionsToAllowDiskUse);
+if (requiresManualSorting(reportsRequestDTO.getSort())) {
+            sortOperatorReportsByNestedTotal(operatorReports, reportsRequestDTO.getSort(), reportsRequestDTO.getOrder());
+        }
+
+
+    private boolean requiresManualSorting(String sort) {
+        if (sort == null) return false;
+        String sortLower = sort.toLowerCase();
+        return sortLower.equals("total") || 
+               sortLower.equals("added_total") || sortLower.equals("addedtotal") ||
+               sortLower.equals("changed_total") || sortLower.equals("changedtotal") ||
+               sortLower.equals("archived_total") || sortLower.equals("archivedtotal") ||
+               sortLower.equals("deleted_total") || sortLower.equals("deletedtotal");
+    }
+
+    private void sortOperatorReportsByNestedTotal(List<OperatorReportDTO> reports, String sort, String order) {
+        reports.sort((r1, r2) -> {
+            int total1 = getNestedTotalForSort(r1, sort);
+            int total2 = getNestedTotalForSort(r2, sort);
+            
+            int comparison = Integer.compare(total1, total2);
+            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
+        });
+    }
+
+    private int getNestedTotalForSort(OperatorReportDTO report, String sort) {
+        if (sort == null) return 0;
+        
+        String sortLower = sort.toLowerCase();
+        
+        if (sortLower.equals("total")) {
+            return calculateTotal(report);
+        } else if (sortLower.equals("added_total") || sortLower.equals("addedtotal")) {
+            return calculateActionStatusTotal(report.getAdded());
+        } else if (sortLower.equals("changed_total") || sortLower.equals("changedtotal")) {
+            return calculateActionStatusTotal(report.getChanged());
+        } else if (sortLower.equals("archived_total") || sortLower.equals("archivedtotal")) {
+            return calculateActionStatusTotal(report.getArchived());
+        } else if (sortLower.equals("deleted_total") || sortLower.equals("deletedtotal")) {
+            return calculateActionStatusTotal(report.getDeleted());
+        }
+        
+        return 0;
+    }
+
+    private int calculateActionStatusTotal(ActionStatusCountDTO action) {
+        if (action == null) return 0;
+        return action.getNewCount() + action.getInProgress() + action.getOnHold() + 
+               action.getCancelled() + action.getCompleted();
     }
