@@ -1,39 +1,68 @@
-        sortCombinedReports(combinedReports, reportsRequestDTO.getSort(), reportsRequestDTO.getOrder());
-private void sortCombinedReports(List<OperatorReviewerReportDTO> reports, String sort, String order) {
-        if (reports == null || reports.isEmpty()) {
-            return;
+if ("total".equalsIgnoreCase(reportsRequestDTO.getSort())) {
+            sortOperatorReportsByTotal(operatorReports, reportsRequestDTO.getOrder());
         }
 
-        Comparator<OperatorReviewerReportDTO> comparator = getComparatorForOperatorReviewer(sort);
-        
-        if ("desc".equalsIgnoreCase(order)) {
-            comparator = comparator.reversed();
-        }
-        
-        reports.sort(comparator);
+
+
+private void sortOperatorReportsByTotal(List<OperatorReportDTO> reports, String order) {
+        reports.sort((r1, r2) -> {
+            int total1 = calculateTotal(r1);
+            int total2 = calculateTotal(r2);
+            
+            int comparison = Integer.compare(total1, total2);
+            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
+        });
     }
 
-    private Comparator<OperatorReviewerReportDTO> getComparatorForOperatorReviewer(String sort) {
-        if (sort == null) {
-            return Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
-                    Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
+    private int calculateTotal(OperatorReportDTO report) {
+        int total = 0;
+        if (report.getAdded() != null) {
+            total += report.getAdded().getNewCount() + report.getAdded().getInProgress() + 
+                     report.getAdded().getOnHold() + report.getAdded().getCancelled() + 
+                     report.getAdded().getCompleted();
         }
+        if (report.getChanged() != null) {
+            total += report.getChanged().getNewCount() + report.getChanged().getInProgress() + 
+                     report.getChanged().getOnHold() + report.getChanged().getCancelled() + 
+                     report.getChanged().getCompleted();
+        }
+        if (report.getArchived() != null) {
+            total += report.getArchived().getNewCount() + report.getArchived().getInProgress() + 
+                     report.getArchived().getOnHold() + report.getArchived().getCancelled() + 
+                     report.getArchived().getCompleted();
+        }
+        if (report.getDeleted() != null) {
+            total += report.getDeleted().getNewCount() + report.getDeleted().getInProgress() + 
+                     report.getDeleted().getOnHold() + report.getDeleted().getCancelled() + 
+                     report.getDeleted().getCompleted();
+        }
+        return total;
+    }
 
-        return switch (sort.toLowerCase()) {
-            case "researcher_name", "researchername" -> 
-                Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
-                        Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
-            case "added" -> Comparator.comparingInt(OperatorReviewerReportDTO::getAdded);
-            case "changed" -> Comparator.comparingInt(OperatorReviewerReportDTO::getChanged);
-            case "archived" -> Comparator.comparingInt(OperatorReviewerReportDTO::getArchived);
-            case "deleted" -> Comparator.comparingInt(OperatorReviewerReportDTO::getDeleted);
-            case "new", "newcount" -> Comparator.comparingInt(OperatorReviewerReportDTO::getNewCount);
-            case "in_progress", "inprogress" -> Comparator.comparingInt(OperatorReviewerReportDTO::getInProgress);
-            case "on_hold", "onhold" -> Comparator.comparingInt(OperatorReviewerReportDTO::getOnHold);
-            case "cancelled" -> Comparator.comparingInt(OperatorReviewerReportDTO::getCancelled);
-            case "completed" -> Comparator.comparingInt(OperatorReviewerReportDTO::getCompleted);
-            case "total" -> Comparator.comparingInt(OperatorReviewerReportDTO::getTotal);
-            default -> Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
-                    Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
-        };
+
+
+
+
+
+
+
+// If sorting by total, sort manually
+    if ("total".equalsIgnoreCase(reportsRequestDTO.getSort())) {
+        sortReviewerReportsByTotal(reviewerReports, reportsRequestDTO.getOrder());
+    }
+
+
+  private void sortReviewerReportsByTotal(List<ReviewerReportDTO> reports, String order) {
+        reports.sort((r1, r2) -> {
+            int total1 = calculateReviewerTotal(r1);
+            int total2 = calculateReviewerTotal(r2);
+            
+            int comparison = Integer.compare(total1, total2);
+            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
+        });
+    }
+
+    private int calculateReviewerTotal(ReviewerReportDTO report) {
+        return report.getNewCount() + report.getInProgress() + report.getOnHold() + 
+               report.getCancelled() + report.getCompleted();
     }
