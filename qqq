@@ -1,68 +1,24 @@
-if ("total".equalsIgnoreCase(reportsRequestDTO.getSort())) {
-            sortOperatorReportsByTotal(operatorReports, reportsRequestDTO.getOrder());
-        }
-
-
-
-private void sortOperatorReportsByTotal(List<OperatorReportDTO> reports, String order) {
-        reports.sort((r1, r2) -> {
-            int total1 = calculateTotal(r1);
-            int total2 = calculateTotal(r2);
-            
-            int comparison = Integer.compare(total1, total2);
-            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
-        });
-    }
-
-    private int calculateTotal(OperatorReportDTO report) {
-        int total = 0;
-        if (report.getAdded() != null) {
-            total += report.getAdded().getNewCount() + report.getAdded().getInProgress() + 
-                     report.getAdded().getOnHold() + report.getAdded().getCancelled() + 
-                     report.getAdded().getCompleted();
-        }
-        if (report.getChanged() != null) {
-            total += report.getChanged().getNewCount() + report.getChanged().getInProgress() + 
-                     report.getChanged().getOnHold() + report.getChanged().getCancelled() + 
-                     report.getChanged().getCompleted();
-        }
-        if (report.getArchived() != null) {
-            total += report.getArchived().getNewCount() + report.getArchived().getInProgress() + 
-                     report.getArchived().getOnHold() + report.getArchived().getCancelled() + 
-                     report.getArchived().getCompleted();
-        }
-        if (report.getDeleted() != null) {
-            total += report.getDeleted().getNewCount() + report.getDeleted().getInProgress() + 
-                     report.getDeleted().getOnHold() + report.getDeleted().getCancelled() + 
-                     report.getDeleted().getCompleted();
-        }
-        return total;
-    }
-
-
-
-
-
-
-
-
-// If sorting by total, sort manually
-    if ("total".equalsIgnoreCase(reportsRequestDTO.getSort())) {
-        sortReviewerReportsByTotal(reviewerReports, reportsRequestDTO.getOrder());
-    }
-
-
-  private void sortReviewerReportsByTotal(List<ReviewerReportDTO> reports, String order) {
-        reports.sort((r1, r2) -> {
-            int total1 = calculateReviewerTotal(r1);
-            int total2 = calculateReviewerTotal(r2);
-            
-            int comparison = Integer.compare(total1, total2);
-            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
-        });
-    }
-
-    private int calculateReviewerTotal(ReviewerReportDTO report) {
-        return report.getNewCount() + report.getInProgress() + report.getOnHold() + 
-               report.getCancelled() + report.getCompleted();
+Aggregation aggregation;
+    if(changeLogFilters.getSort() != null && changeLogFilters.getSort().equals(SORT_LAST_MODIFIED_BY)){
+      aggregation = Aggregation.newAggregation(
+              matchOperation, 
+              addFieldsOperation,
+              group(HON).first(Aggregation.ROOT).as(DOC),
+              replaceRoot(DOC),
+              sort, 
+              skip, 
+              limit, 
+              projectSelectiveData
+      ).withOptions(aggregationOptionsToAllowDiskUse);
+    } else {
+      aggregation = Aggregation.newAggregation(
+              matchOperation, 
+              group(HON).first(Aggregation.ROOT).as(DOC),
+              replaceRoot(DOC),
+              sort, 
+              skip, 
+              limit,
+              addFieldsOperation,
+              projectSelectiveData
+      ).withOptions(aggregationOptionsToAllowDiskUse);
     }
