@@ -1,18 +1,39 @@
-FacetOperation actionFacet = Aggregation.facet()
-                .and(Aggregation.count().as("count")).as("total")
-                .and(sortOperation, skipOperation(reportsRequestDTO.getStartPage(), reportsRequestDTO.getBatchSize()), 
-                     limitOperation(reportsRequestDTO.getBatchSize())).as("data");
+        sortCombinedReports(combinedReports, reportsRequestDTO.getSort(), reportsRequestDTO.getOrder());
+private void sortCombinedReports(List<OperatorReviewerReportDTO> reports, String sort, String order) {
+        if (reports == null || reports.isEmpty()) {
+            return;
+        }
 
+        Comparator<OperatorReviewerReportDTO> comparator = getComparatorForOperatorReviewer(sort);
+        
+        if ("desc".equalsIgnoreCase(order)) {
+            comparator = comparator.reversed();
+        }
+        
+        reports.sort(comparator);
+    }
 
-Aggregation actionAggregation = Aggregation.newAggregation(actionMatch, actionGroup, actionFacet, actionProjection)
-                .withOptions(aggregationOptions);
+    private Comparator<OperatorReviewerReportDTO> getComparatorForOperatorReviewer(String sort) {
+        if (sort == null) {
+            return Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
+                    Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
+        }
 
-
-FacetOperation statusFacet = Aggregation.facet()
-                .and(Aggregation.count().as("count")).as("total")
-                .and(sortOperation, skipOperation(reportsRequestDTO.getStartPage(), reportsRequestDTO.getBatchSize()), 
-                     limitOperation(reportsRequestDTO.getBatchSize())).as("data");
-
-
-Aggregation statusAggregation = Aggregation.newAggregation(statusMatch, statusGroup, statusFacet, statusProjection)
-                .withOptions(aggregationOptions);
+        return switch (sort.toLowerCase()) {
+            case "researcher_name", "researchername" -> 
+                Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
+                        Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
+            case "added" -> Comparator.comparingInt(OperatorReviewerReportDTO::getAdded);
+            case "changed" -> Comparator.comparingInt(OperatorReviewerReportDTO::getChanged);
+            case "archived" -> Comparator.comparingInt(OperatorReviewerReportDTO::getArchived);
+            case "deleted" -> Comparator.comparingInt(OperatorReviewerReportDTO::getDeleted);
+            case "new", "newcount" -> Comparator.comparingInt(OperatorReviewerReportDTO::getNewCount);
+            case "in_progress", "inprogress" -> Comparator.comparingInt(OperatorReviewerReportDTO::getInProgress);
+            case "on_hold", "onhold" -> Comparator.comparingInt(OperatorReviewerReportDTO::getOnHold);
+            case "cancelled" -> Comparator.comparingInt(OperatorReviewerReportDTO::getCancelled);
+            case "completed" -> Comparator.comparingInt(OperatorReviewerReportDTO::getCompleted);
+            case "total" -> Comparator.comparingInt(OperatorReviewerReportDTO::getTotal);
+            default -> Comparator.comparing(OperatorReviewerReportDTO::getResearcherName, 
+                    Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
+        };
+    }
