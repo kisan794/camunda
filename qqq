@@ -1,50 +1,798 @@
-if (requiresManualSorting(reportsRequestDTO.getSort())) {
-            sortOperatorReportsByNestedTotal(operatorReports, reportsRequestDTO.getSort(), reportsRequestDTO.getOrder());
+package com.hireright.sourceintelligence.domain.mapper;
+
+import com.hireright.sourceintelligence.api.dto.Alias;
+import com.hireright.sourceintelligence.api.dto.ContactDetailsDTO;
+import com.hireright.sourceintelligence.api.dto.SourceDTO;
+import com.hireright.sourceintelligence.domain.constants.Constants;
+import com.hireright.sourceintelligence.domain.entity.Source;
+import org.apache.commons.lang3.StringUtils;
+import org.bson.types.ObjectId;
+import org.json.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static com.hireright.sourceintelligence.domain.constants.Constants.SmartSearchKeys.*;
+import static com.hireright.sourceintelligence.domain.mapper.SourceMapper.mapToJSONObject;
+import static com.hireright.sourceintelligence.service.impl.SearchConstants.ReportActions.CREATE;
+
+@Mapper(componentModel = "spring", imports = {JSONObject.class, JSONArray.class})
+public interface SourceDTOMapper {
+
+    // Helper Methods
+    default String getPayloadField(Source source, String key) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            return payload.has(key) ? payload.getString(key) : "";
         }
-
-
-    private boolean requiresManualSorting(String sort) {
-        if (sort == null) return false;
-        String sortLower = sort.toLowerCase();
-        return sortLower.equals("total") || 
-               sortLower.equals("added_total") || sortLower.equals("addedtotal") ||
-               sortLower.equals("changed_total") || sortLower.equals("changedtotal") ||
-               sortLower.equals("archived_total") || sortLower.equals("archivedtotal") ||
-               sortLower.equals("deleted_total") || sortLower.equals("deletedtotal");
+        return "";
     }
 
-    private void sortOperatorReportsByNestedTotal(List<OperatorReportDTO> reports, String sort, String order) {
-        reports.sort((r1, r2) -> {
-            int total1 = getNestedTotalForSort(r1, sort);
-            int total2 = getNestedTotalForSort(r2, sort);
-            
-            int comparison = Integer.compare(total1, total2);
-            return "desc".equalsIgnoreCase(order) ? -comparison : comparison;
-        });
+    default String stripHtmlTags(String input) {
+        return input != null ? input.replaceAll("<[^>]*>", "").replace("&nbsp;", " ") : "";
     }
 
-    private int getNestedTotalForSort(OperatorReportDTO report, String sort) {
-        if (sort == null) return 0;
-        
-        String sortLower = sort.toLowerCase();
-        
-        if (sortLower.equals("total")) {
-            return calculateTotal(report);
-        } else if (sortLower.equals("added_total") || sortLower.equals("addedtotal")) {
-            return calculateActionStatusTotal(report.getAdded());
-        } else if (sortLower.equals("changed_total") || sortLower.equals("changedtotal")) {
-            return calculateActionStatusTotal(report.getChanged());
-        } else if (sortLower.equals("archived_total") || sortLower.equals("archivedtotal")) {
-            return calculateActionStatusTotal(report.getArchived());
-        } else if (sortLower.equals("deleted_total") || sortLower.equals("deletedtotal")) {
-            return calculateActionStatusTotal(report.getDeleted());
+
+    default Instant getLastModifiedDate(Source source, String lastModifiedDate) {
+        if (source.getAction().equals(CREATE)) {
+            return null;
         }
-        
+        return source.getLastModifiedDate();
+    }
+
+    default String getAddressLine(Source source) {
+        String line = "";
+        String postalCode = "";
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(ADDRESS)) {
+                JSONArray address = payload.getJSONArray(ADDRESS);
+                JSONObject addressJSONObject = address.getJSONObject(0);
+                if (addressJSONObject.has(LINE)) {
+                    line = addressJSONObject.getString(LINE);
+                }
+                if (addressJSONObject.has(POSTAL_CODE)) {
+                    postalCode = addressJSONObject.getString(POSTAL_CODE);
+                }
+            }
+        }
+        return Stream.of(line, source.getCity(), source.getState(), postalCode, source.getCountry())
+                .filter(value -> value != null && !value.isEmpty()) // Filter out null or empty values
+                .collect(Collectors.joining(", "));
+    }
+
+    default String getRelationship(Source source) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(RELATIONSHIPS)) {
+                JSONArray relationships = payload.getJSONArray(RELATIONSHIPS);
+                if (!relationships.isEmpty()) {
+                    JSONObject relationship = relationships.getJSONObject(0);
+                    return relationship.has(RELATIONSHIP) ? relationship.getString(RELATIONSHIP) : "";
+                }
+            }
+        }
+        return "";
+    }
+
+    default String getRelationshipName(Source source) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(RELATIONSHIPS)) {
+                JSONArray relationships = payload.getJSONArray(RELATIONSHIPS);
+                if (!relationships.isEmpty()) {
+                    JSONObject relationship = relationships.getJSONObject(0);
+                    return relationship.has(NAME) ? relationship.getString(NAME) : "";
+                }
+            }
+        }
+        return "";
+    }
+
+    default String getAdditionalInfo(Source source, String fieldName) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(ADDITIONAL_INFO)) {
+                JSONArray additionalInfo = payload.getJSONArray(ADDITIONAL_INFO);
+                if (!additionalInfo.isEmpty()) {
+                    JSONObject additionalInfoJSONObject = additionalInfo.getJSONObject(0);
+                    return additionalInfoJSONObject.has(fieldName) ? additionalInfoJSONObject.getString(fieldName) : "";
+                }
+            }
+        }
+        return "";
+    }
+
+    default void mapContactBaseDTO(JSONObject contactDetailJson, ContactDetailsDTO contactDTO) {
+        if (hasNonEmptyValue(contactDetailJson, TURN_AROUND_TIME)) {
+            String turnAroundTime = contactDetailJson.getString(TURN_AROUND_TIME);
+
+            if (hasNonEmptyValue(contactDetailJson, TURN_AROUND_TIME_UNIT)) {
+                turnAroundTime += " " + contactDetailJson.getString(TURN_AROUND_TIME_UNIT);
+            }
+
+            contactDTO.setTurnAroundTime(turnAroundTime);
+        }
+        if (contactDetailJson.has(FOLLOW_UP_ALLOWED) && !contactDetailJson.isNull(FOLLOW_UP_ALLOWED)) {
+            boolean isFollowUpAfter = getBooleanValue(contactDetailJson, FOLLOW_UP_ALLOWED);
+
+            if (isFollowUpAfter && contactDetailJson.has(FOLLOW_UP_ALLOWED_AFTER)) {
+                String followUp = contactDetailJson.optString(FOLLOW_UP_ALLOWED_AFTER);
+
+                if (contactDetailJson.has(FOLLOW_UP_ALLOWED_AFTER_UNITS)) {
+                    followUp += " " + contactDetailJson.optString(FOLLOW_UP_ALLOWED_AFTER_UNITS);
+                } else {
+                    followUp += " days";
+                }
+
+                contactDTO.setFollowUpAllowedAfter(followUp);
+            }
+        }
+        if (hasNonEmptyValue(contactDetailJson, SUR_CHARGE_AMOUNT)) {
+            String surcharge = contactDetailJson.optString(SUR_CHARGE_AMOUNT) + " "
+                    + contactDetailJson.optString(SUR_CHARGE_CURRENCY);
+            contactDTO.setSurcharge(surcharge.trim());
+        }
+        if (hasNonEmptyValue(contactDetailJson, SUR_CHARGE_PAYMENT)) {
+            contactDTO.setPaymentMethod(contactDetailJson.optString(SUR_CHARGE_PAYMENT));
+        }
+    }
+
+    private static boolean hasNonEmptyValue(JSONObject json, String key) {
+        return json.has(key)
+                && !json.isNull(key)
+                && !StringUtils.isBlank(json.optString(key));
+    }
+
+    private static boolean getBooleanValue(JSONObject json, String key) {
+        Object value = json.get(key);
+        if (value instanceof Boolean b) {
+            return b;
+        } else if (value instanceof String s) {
+            return Boolean.getBoolean(s);
+        }
+        return false;
+    }
+
+    // Helper class to hold contact aggregation state
+    class ContactAggregator {
+        List<ContactDetailsDTO> result = new ArrayList<>();
+        ContactDetailsDTO[] contactList = null;
+        ContactDetailsDTO phoneDetailsDTO = null;
+        List<String> phoneNumbers = new ArrayList<>();
+        Integer phonePriority = null;
+        ContactDetailsDTO emailDetailsDTO = null;
+        List<String> emailList = new ArrayList<>();
+        Integer emailPriority = null;
+        ContactDetailsDTO faxDetailsDTO = null;
+        List<String> faxNumbers = new ArrayList<>();
+        Integer faxPriority = null;
+        ContactDetailsDTO mailDetailsDTO = null;
+        List<String> mailAddresses = new ArrayList<>();
+        Integer mailPriority = null;
+        ContactDetailsDTO websiteDetailsDTO = null;
+        List<String> websiteList = new ArrayList<>();
+        Integer websitePriority = null;
+    }
+
+    default List<ContactDetailsDTO> mapContactDetails(Source source) {
+        if (source.getPayload() == null) {
+            return new ArrayList<>();
+        }
+
+        JSONObject payload = mapToJSONObject(source.getPayload());
+        JSONArray contactDetails = extractContactDetailsArray(payload);
+
+        if (contactDetails == null || contactDetails.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        ContactAggregator aggregator = new ContactAggregator();
+        aggregator.contactList = new ContactDetailsDTO[contactDetails.length()];
+        boolean isDoNotContact = isDoNotContact(payload);
+
+        processContactDetails(contactDetails, isDoNotContact, aggregator);
+        finalizeAggregatedContacts(aggregator);
+
+        return aggregator.result;
+    }
+
+    default JSONArray extractContactDetailsArray(JSONObject payload) {
+        if (!payload.has(CONTACTS) || payload.get(CONTACTS) == null) {
+            return null;
+        }
+
+        JSONArray contacts = (JSONArray) payload.get(CONTACTS);
+        if (contacts.isEmpty()) {
+            return null;
+        }
+
+        JSONObject firstContact = (JSONObject) contacts.get(0);
+        return firstContact.has(CONTACT_DETAILS)
+                ? (JSONArray) firstContact.get(CONTACT_DETAILS)
+                : new JSONArray();
+    }
+
+    default boolean isDoNotContact(JSONObject payload) {
+        if (!payload.has(ADDITIONAL_INFO)) {
+            return false;
+        }
+
+        JSONArray additionalInfoList = payload.getJSONArray(ADDITIONAL_INFO);
+        if (additionalInfoList.isEmpty()) {
+            return false;
+        }
+
+        JSONObject additionalInfoJSONObject = additionalInfoList.getJSONObject(0);
+        String doNotContact = additionalInfoJSONObject.has(DO_NOT_CONTACT)
+                ? additionalInfoJSONObject.getString(DO_NOT_CONTACT) : "";
+
+        return !doNotContact.isEmpty() && !doNotContact.equalsIgnoreCase("false");
+    }
+
+    default void processContactDetails(JSONArray contactDetails, boolean isDoNotContact, ContactAggregator aggregator) {
+        for (Object contactDetail : contactDetails) {
+            JSONObject contactDetailJson = (JSONObject) contactDetail;
+            processContactDetail(contactDetailJson, isDoNotContact, aggregator);
+        }
+    }
+
+    default void processContactDetail(JSONObject contactDetailJson, boolean isDoNotContact, ContactAggregator aggregator) {
+        if (!contactDetailJson.has(TYPE) || contactDetailJson.isNull(TYPE)) {
+            return;
+        }
+
+        String contactType = contactDetailJson.getString(TYPE);
+        int priority = extractPriority(contactDetailJson);
+
+        JSONArray communication = extractCommunicationArray(contactDetailJson);
+        if (communication == null) {
+            return;
+        }
+
+        ContactDetailsDTO contactDetailsDTO = initializeContactDTO(contactType, isDoNotContact, contactDetailJson);
+        if (contactDetailsDTO == null) {
+            return;
+        }
+
+        processCommunications(communication, contactType, isDoNotContact, contactDetailsDTO, aggregator);
+        storeContactByType(contactDetailsDTO, contactType, priority, aggregator);
+    }
+
+    default int extractPriority(JSONObject contactDetailJson) {
+        if (!contactDetailJson.has(PRIORITY)) {
+            return 0;
+        }
+
+        Object priorityObj = contactDetailJson.get(PRIORITY);
+        if (priorityObj instanceof String) {
+            return Integer.parseInt((String) priorityObj);
+        }
+        return contactDetailJson.getInt(PRIORITY);
+    }
+
+    default JSONArray extractCommunicationArray(JSONObject contactDetailJson) {
+        if (!contactDetailJson.has(COMMUNICATION) || contactDetailJson.get(COMMUNICATION) == null) {
+            return null;
+        }
+
+        Object communObj = contactDetailJson.get(COMMUNICATION);
+        if (!(communObj instanceof JSONArray)) {
+            return null;
+        }
+
+        JSONArray communication = (JSONArray) communObj;
+        return communication.isEmpty() ? null : communication;
+    }
+
+    default ContactDetailsDTO initializeContactDTO(String contactType, boolean isDoNotContact, JSONObject contactDetailJson) {
+        if (isDoNotContact && !CONTACT_AUTOMATED_SERVICES.equalsIgnoreCase(contactType)) {
+            return null;
+        }
+
+        ContactDetailsDTO dto = new ContactDetailsDTO();
+
+        if (!CONTACT_AUTOMATED_SERVICES.equalsIgnoreCase(contactType)) {
+            mapContactBaseDTO(contactDetailJson, dto);
+        }
+
+        return dto;
+    }
+
+    default void processCommunications(JSONArray communication, String contactType, boolean isDoNotContact,
+                                      ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        for (Object commObj : communication) {
+            JSONObject communicationObj = (JSONObject) commObj;
+            processSingleCommunication(communicationObj, contactType, isDoNotContact, contactDetailsDTO, aggregator);
+        }
+    }
+
+    default void processSingleCommunication(JSONObject communicationObj, String contactType, boolean isDoNotContact,
+                                           ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        if (CONTACT_AUTOMATED_SERVICES.equalsIgnoreCase(contactType)) {
+            processAutomatedService(communicationObj, contactDetailsDTO, aggregator);
+            return;
+        }
+
+        JSONArray communicationInfoDetails = extractCommunicationInfo(communicationObj);
+        if (communicationInfoDetails == null) {
+            return;
+        }
+
+        PhoneComponents phoneComponents = new PhoneComponents();
+
+        for (Object info : communicationInfoDetails) {
+            if (!(info instanceof JSONObject)) {
+                continue;
+            }
+
+            JSONObject infoJson = (JSONObject) info;
+            processCommunicationInfo(infoJson, contactType, isDoNotContact, contactDetailsDTO,
+                                    phoneComponents, aggregator);
+        }
+
+        finalizePhoneNumber(phoneComponents, contactType, contactDetailsDTO, aggregator);
+    }
+
+    class PhoneComponents {
+        String number = "";
+        String extension = "";
+        String countryCode = "";
+        String areaCode = "";
+        boolean isFollowUpAllowed = false;
+    }
+
+    default JSONArray extractCommunicationInfo(JSONObject communicationObj) {
+        if (!communicationObj.has(COMMUNICATION_INFO) || communicationObj.get(COMMUNICATION_INFO) == null) {
+            return null;
+        }
+
+        JSONArray info = (JSONArray) communicationObj.get(COMMUNICATION_INFO);
+        return info.isEmpty() ? null : info;
+    }
+
+    default void processAutomatedService(JSONObject communicationObj, ContactDetailsDTO contactDetailsDTO,
+                                        ContactAggregator aggregator) {
+        if (communicationObj.has(NAME)) {
+            contactDetailsDTO.setProvider(communicationObj.getString(NAME));
+        }
+
+        JSONArray communicationInfo = extractCommunicationInfo(communicationObj);
+        if (communicationInfo != null) {
+            processAutomatedServiceInfo(communicationInfo, contactDetailsDTO);
+        }
+
+        if (!contactDetailsDTO.isEmpty()) {
+            contactDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_AUTOMATED_SERVICES);
+            aggregator.result.add(contactDetailsDTO);
+        }
+    }
+
+    default void processAutomatedServiceInfo(JSONArray communicationInfo, ContactDetailsDTO contactDetailsDTO) {
+        boolean isFollowUpAllowed = false;
+
+        for (Object info : communicationInfo) {
+            if (!(info instanceof JSONObject)) {
+                continue;
+            }
+
+            JSONObject infoJson = (JSONObject) info;
+            if (!infoJson.has(TYPE)) {
+                continue;
+            }
+
+            String type = infoJson.getString(TYPE);
+            Object value = !infoJson.isNull(VALUE) ? infoJson.get(VALUE) : "";
+
+            isFollowUpAllowed = processAutomatedServiceField(type, value, isFollowUpAllowed, contactDetailsDTO);
+        }
+    }
+
+    default boolean processAutomatedServiceField(String type, Object value, boolean isFollowUpAllowed,
+                                                 ContactDetailsDTO contactDetailsDTO) {
+        String strValue = (String) value;
+
+        switch (type) {
+            case CODES:
+                contactDetailsDTO.setCode(strValue);
+                break;
+            case BRANCH:
+                contactDetailsDTO.setBranch(strValue);
+                break;
+            case SUR_CHARGE_AMOUNT:
+                if (!StringUtils.isBlank(strValue)) {
+                    contactDetailsDTO.setSurcharge(strValue);
+                }
+                break;
+            case SUR_CHARGE_CURRENCY:
+                if (contactDetailsDTO.getSurcharge() != null && !contactDetailsDTO.getSurcharge().isBlank()) {
+                    contactDetailsDTO.setSurcharge(contactDetailsDTO.getSurcharge() + " " + value);
+                }
+                break;
+            case SUR_CHARGE_PAYMENT:
+                if (contactDetailsDTO.getSurcharge() != null && !contactDetailsDTO.getSurcharge().isBlank()) {
+                    contactDetailsDTO.setPaymentMethod(strValue);
+                }
+                break;
+            case TURN_AROUND_TIME:
+                if (value != null && !StringUtils.isBlank(strValue)) {
+                    contactDetailsDTO.setTurnAroundTime(value + " days");
+                }
+                break;
+            case FOLLOW_UP_ALLOWED:
+                if (value != null && !StringUtils.isBlank(strValue)) {
+                    isFollowUpAllowed = strValue.equalsIgnoreCase("true");
+                }
+                break;
+            case FOLLOW_UP_ALLOWED_AFTER:
+                if (isFollowUpAllowed && value != null) {
+                    String followUpValue = StringUtils.isBlank(strValue) ? "0" : strValue;
+                    contactDetailsDTO.setFollowUpAllowedAfter(followUpValue + " days");
+                }
+                break;
+        }
+
+        return isFollowUpAllowed;
+    }
+
+    default void processCommunicationInfo(JSONObject infoJson, String contactType, boolean isDoNotContact,
+                                         ContactDetailsDTO contactDetailsDTO, PhoneComponents phoneComponents,
+                                         ContactAggregator aggregator) {
+        if (!infoJson.has(TYPE)) {
+            return;
+        }
+
+        String type = infoJson.getString(TYPE);
+        Object value = !infoJson.isNull(VALUE) ? infoJson.get(VALUE) : "";
+        String strValue = (String) value;
+
+        if (!isDoNotContact) {
+            processPhoneFaxInfo(type, strValue, contactType, phoneComponents);
+            processEmailInfo(type, strValue, contactType, contactDetailsDTO, aggregator);
+            processMailInfo(type, strValue, contactType, contactDetailsDTO, aggregator);
+            processWebsiteInfo(type, strValue, contactType, contactDetailsDTO, aggregator);
+        }
+    }
+
+    default void processPhoneFaxInfo(String type, String value, String contactType, PhoneComponents components) {
+        if (!CONTACT_PHONES.equals(contactType) && !CONTACT_FAXES.equals(contactType)) {
+            return;
+        }
+
+        switch (type) {
+            case PHONE_NUMBER:
+                components.number = value;
+                break;
+            case EXTENSION:
+                components.extension = value;
+                break;
+            case PHONE_COUNTRY_CODE:
+                components.countryCode = value;
+                if (!StringUtils.isEmpty(components.countryCode) && !components.countryCode.contains("+")) {
+                    components.countryCode = "+" + components.countryCode;
+                }
+                break;
+            case AREA_CODE:
+                components.areaCode = value;
+                break;
+        }
+    }
+
+    default void processEmailInfo(String type, String value, String contactType,
+                                 ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        if (!CONTACT_EMAILS.equals(contactType) || !ADDRESS.equals(type)) {
+            return;
+        }
+
+        if (value != null && !value.isBlank()) {
+            aggregator.emailList.add(value);
+            contactDetailsDTO.setEmail(value);
+        }
+    }
+
+    default void processMailInfo(String type, String value, String contactType,
+                                ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        if (!CONTACT_MAILS.equals(contactType) || !ADDRESS.equals(type)) {
+            return;
+        }
+
+        if (value != null && !value.isBlank() && !value.equalsIgnoreCase("n/a")) {
+            aggregator.mailAddresses.add(value);
+            contactDetailsDTO.setMailAddresses(aggregator.mailAddresses);
+        }
+    }
+
+    default void processWebsiteInfo(String type, String value, String contactType,
+                                   ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        if (!CONTACT_WEBSITES.equals(contactType) || !ADDRESSES.equals(type)) {
+            return;
+        }
+
+        if (value != null && !value.isBlank()) {
+            aggregator.websiteList.add(value);
+            contactDetailsDTO.setWebsite(value);
+        }
+    }
+
+    default void finalizePhoneNumber(PhoneComponents components, String contactType,
+                                    ContactDetailsDTO contactDetailsDTO, ContactAggregator aggregator) {
+        if (StringUtils.isEmpty(components.number)) {
+            return;
+        }
+
+        StringJoiner joiner = new StringJoiner(" ");
+
+        if (!components.number.contains("+")) {
+            if (!StringUtils.isEmpty(components.countryCode)) {
+                joiner.add(components.countryCode);
+            }
+            if (!StringUtils.isEmpty(components.areaCode)) {
+                joiner.add(components.areaCode);
+            }
+        }
+
+        joiner.add(components.number);
+
+        if (!StringUtils.isEmpty(components.extension)) {
+            joiner.add(components.extension);
+        }
+
+        String formattedNumber = joiner.toString();
+        contactDetailsDTO.setNumber(formattedNumber);
+
+        if (CONTACT_PHONES.equalsIgnoreCase(contactType)) {
+            aggregator.phoneNumbers.add(formattedNumber);
+        } else if (CONTACT_FAXES.equalsIgnoreCase(contactType)) {
+            aggregator.faxNumbers.add(formattedNumber);
+        }
+    }
+
+    default void storeContactByType(ContactDetailsDTO contactDetailsDTO, String contactType,
+                                   int priority, ContactAggregator aggregator) {
+        if (contactDetailsDTO == null || contactDetailsDTO.isEmpty()) {
+            return;
+        }
+
+        if (CONTACT_AUTOMATED_SERVICES.equalsIgnoreCase(contactType)) {
+            return; // Already handled in processAutomatedService
+        }
+
+        contactDetailsDTO.setType(contactType.replace("contact", ""));
+
+        if (CONTACT_PHONES.equalsIgnoreCase(contactType)) {
+            storePhoneContact(contactDetailsDTO, priority, aggregator);
+        } else if (CONTACT_EMAILS.equalsIgnoreCase(contactType)) {
+            storeEmailContact(contactDetailsDTO, priority, aggregator);
+        } else if (CONTACT_FAXES.equalsIgnoreCase(contactType)) {
+            storeFaxContact(contactDetailsDTO, priority, aggregator);
+        } else if (CONTACT_MAILS.equalsIgnoreCase(contactType)) {
+            storeMailContact(contactDetailsDTO, priority, aggregator);
+        } else if (CONTACT_WEBSITES.equalsIgnoreCase(contactType)) {
+            storeWebsiteContact(contactDetailsDTO, priority, aggregator);
+        } else {
+            storeOtherContact(contactDetailsDTO, priority, aggregator);
+        }
+    }
+
+    default void storePhoneContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.phoneDetailsDTO == null) {
+            aggregator.phoneDetailsDTO = dto;
+            if (priority > 0) {
+                aggregator.phonePriority = priority;
+            }
+        }
+    }
+
+    default void storeEmailContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.emailDetailsDTO == null) {
+            aggregator.emailDetailsDTO = dto;
+            if (priority > 0) {
+                aggregator.emailPriority = priority;
+            }
+        }
+    }
+
+    default void storeFaxContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.faxDetailsDTO == null) {
+            aggregator.faxDetailsDTO = dto;
+            if (priority > 0) {
+                aggregator.faxPriority = priority;
+            }
+        }
+    }
+
+    default void storeMailContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.mailDetailsDTO == null) {
+            aggregator.mailDetailsDTO = dto;
+            if (priority > 0) {
+                aggregator.mailPriority = priority;
+            }
+        }
+    }
+
+    default void storeWebsiteContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.websiteDetailsDTO == null) {
+            aggregator.websiteDetailsDTO = dto;
+            if (priority > 0) {
+                aggregator.websitePriority = priority;
+            }
+        }
+    }
+
+    default void storeOtherContact(ContactDetailsDTO dto, int priority, ContactAggregator aggregator) {
+        if (aggregator.contactList != null && priority > 0 && aggregator.contactList.length >= priority) {
+            aggregator.contactList[priority - 1] = dto;
+        }
+    }
+
+    default void finalizeAggregatedContacts(ContactAggregator aggregator) {
+        finalizePhones(aggregator);
+        finalizeEmails(aggregator);
+        finalizeFaxes(aggregator);
+        finalizeMails(aggregator);
+        finalizeWebsites(aggregator);
+        addRemainingContacts(aggregator);
+    }
+
+    default void finalizePhones(ContactAggregator aggregator) {
+        if (aggregator.phoneDetailsDTO == null || aggregator.phoneNumbers.isEmpty()) {
+            return;
+        }
+
+        aggregator.phoneDetailsDTO.setNumbers(aggregator.phoneNumbers);
+        aggregator.phoneDetailsDTO.setNumber(null);
+        aggregator.phoneDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_PHONES);
+
+        addToPriorityListOrResult(aggregator.phoneDetailsDTO, aggregator.phonePriority, aggregator);
+    }
+
+    default void finalizeEmails(ContactAggregator aggregator) {
+        if (aggregator.emailDetailsDTO == null || aggregator.emailList.isEmpty()) {
+            return;
+        }
+
+        aggregator.emailDetailsDTO.setEmails(aggregator.emailList);
+        aggregator.emailDetailsDTO.setEmail(null);
+        aggregator.emailDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_EMAILS);
+
+        addToPriorityListOrResult(aggregator.emailDetailsDTO, aggregator.emailPriority, aggregator);
+    }
+
+    default void finalizeFaxes(ContactAggregator aggregator) {
+        if (aggregator.faxDetailsDTO == null || aggregator.faxNumbers.isEmpty()) {
+            return;
+        }
+
+        aggregator.faxDetailsDTO.setNumbers(aggregator.faxNumbers);
+        aggregator.faxDetailsDTO.setNumber(null);
+        aggregator.faxDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_FAXES);
+
+        addToPriorityListOrResult(aggregator.faxDetailsDTO, aggregator.faxPriority, aggregator);
+    }
+
+    default void finalizeMails(ContactAggregator aggregator) {
+        if (aggregator.mailDetailsDTO == null || aggregator.mailAddresses.isEmpty()) {
+            return;
+        }
+
+        aggregator.mailDetailsDTO.setMailAddresses(aggregator.mailAddresses);
+        aggregator.mailDetailsDTO.setMailAddress(null);
+        aggregator.mailDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_MAILS);
+
+        addToPriorityListOrResult(aggregator.mailDetailsDTO, aggregator.mailPriority, aggregator);
+    }
+
+    default void finalizeWebsites(ContactAggregator aggregator) {
+        if (aggregator.websiteDetailsDTO == null || aggregator.websiteList.isEmpty()) {
+            return;
+        }
+
+        aggregator.websiteDetailsDTO.setWebsites(aggregator.websiteList);
+        aggregator.websiteDetailsDTO.setWebsite(null);
+        aggregator.websiteDetailsDTO.setType(Constants.SmartSearchKeys.TYPE_WEBSITES);
+
+        addToPriorityListOrResult(aggregator.websiteDetailsDTO, aggregator.websitePriority, aggregator);
+    }
+
+    default void addToPriorityListOrResult(ContactDetailsDTO dto, Integer priority, ContactAggregator aggregator) {
+        if (priority != null && priority > 0 && aggregator.contactList != null
+                && aggregator.contactList.length >= priority) {
+            aggregator.contactList[priority - 1] = dto;
+        } else {
+            aggregator.result.add(dto);
+        }
+    }
+
+    default void addRemainingContacts(ContactAggregator aggregator) {
+        if (aggregator.contactList == null) {
+            return;
+        }
+
+        for (ContactDetailsDTO contact : aggregator.contactList) {
+            if (contact != null) {
+                aggregator.result.add(contact);
+            }
+        }
+    }
+
+
+    default String mapOrganizationAlias(Alias[] aliases) {
+        if (aliases != null && aliases.length > 0) {
+            List<String> aliasesList = new ArrayList<>();
+            String organizationAlias = "";
+            for (Alias alias : aliases) {
+                aliasesList.add(alias.getName());
+            }
+            organizationAlias = String.join("; ", aliasesList);
+            return organizationAlias;
+        }
+        return null;
+    }
+
+    default String mapDepartmentAlias(Source source) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(DEPARTMENT_ALIASES)) {
+                JSONArray aliases = payload.getJSONArray(DEPARTMENT_ALIASES);
+                if (!aliases.isEmpty()) {
+                    JSONObject alias = aliases.getJSONObject(0);
+                    return alias.has(NAME) ? alias.getString(NAME) : "";
+                }
+            }
+        }
+        return "";
+    }
+
+    default int mapUsedCount(Source source) {
+        if (source.getPayload() != null) {
+            JSONObject payload = mapToJSONObject(source.getPayload());
+            if (payload.has(USED_COUNT)) {
+                return (int) payload.get(USED_COUNT);
+            }
+        }
         return 0;
     }
-
-    private int calculateActionStatusTotal(ActionStatusCountDTO action) {
-        if (action == null) return 0;
-        return action.getNewCount() + action.getInProgress() + action.getOnHold() + 
-               action.getCancelled() + action.getCompleted();
+    default String map(ObjectId id){
+        return id.toHexString();
     }
+
+    @Mapping(target = "organizationName", source = "organizationName")
+    @Mapping(target = "status", expression = "java(String.valueOf(source.getStatus()))")
+    @Mapping(target = "hon", source = "hon")
+    @Mapping(target = "country", source = "country")
+    @Mapping(target = "state", source = "state")
+    @Mapping(target = "postalCode", source = "postalCode")
+    @Mapping(target = "city", source = "city")
+    @Mapping(target = "region", source = "state")
+    @Mapping(target = "createdBy", source = "createdBy")
+    @Mapping(target = "flagPriority", source = "flagPriority")
+    @Mapping(target = "action", source = "action")
+    @Mapping(target = "lastModifiedBy", source = "lastModifiedBy")
+    @Mapping(target = "approvedBy", source = "approvedBy")
+    @Mapping(target = "lastApprovedDateTime", source = "lastApprovedDate")
+
+    @Mapping(target = "verificationValidationProcess", expression = "java(getAdditionalInfo(source, \"verificationValidationProcess\"))")
+    @Mapping(target = "doNotContact", expression = "java(getAdditionalInfo(source, \"doNotContact\"))")
+    @Mapping(target = "lastUsedDate", expression = "java(getPayloadField(source, \"lastUsedDateTime\"))")
+    @Mapping(target = "lastCleanUpDate", expression = "java(getPayloadField(source, \"lastCleanUpDate\"))")
+    @Mapping(target = "releaseType", expression = "java(getAdditionalInfo(source, \"releaseType\"))")
+    @Mapping(target = "departmentName", expression = "java(getPayloadField(source, \"departmentName\"))")
+    @Mapping(target = "notes", expression = "java(stripHtmlTags(getPayloadField(source, \"notes\")))")
+    @Mapping(target = "usedCount", expression = "java(mapUsedCount(source))")
+    @Mapping(target = "address", expression = "java(getAddressLine(source))")
+    @Mapping(target = "contactDetails", expression = "java(mapContactDetails(source))")
+    @Mapping(target = "organizationAlias", expression = "java(mapOrganizationAlias(source.getOrganizationAlias()))")
+    @Mapping(source = "id", target="id")
+    SourceDTO toSourceDTO(Source source);
+
+    List<SourceDTO> entityToSourceList(List<Source> source);
+
+
+}
+
